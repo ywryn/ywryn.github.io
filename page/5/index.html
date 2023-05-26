@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ywrby个人博客网站 - less is more</title><meta name="author" content="Ywrby"><meta name="copyright" content="Ywrby"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Students majoring in CS at SWU">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ywrby个人博客网站">
+<meta property="og:url" content="http://ywrby.com/page/5/index.html">
+<meta property="og:site_name" content="Ywrby个人博客网站">
+<meta property="og:description" content="Students majoring in CS at SWU">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://ywrby.com/img/ywrby.jpg">
+<meta property="article:author" content="Ywrby">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ywrby.com/img/ywrby.jpg"><link rel="shortcut icon" href="/img/title.png"><link rel="canonical" href="http://ywrby.com/page/5/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Ywrby个人博客网站',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-05-26 22:05:34'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Ywrby个人博客网站" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/ywrby.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">132</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">25</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Bilibili</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 追番列表</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://space.bilibili.com/353923033"><i class="fa-fw fas fa-music"></i><span> B站主页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/back.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Ywrby个人博客网站</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Bilibili</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 追番列表</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://space.bilibili.com/353923033"><i class="fa-fw fas fa-music"></i><span> B站主页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Ywrby个人博客网站</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="mailto:ywrby0214@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/353923033" target="_blank" title="Bilibili"><i class="fas fa-file-video"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2278431384&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://twitter.com/ywrby1" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="https://www.facebook.com/profile.php?id=100033741068822" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/05/13/Swagger%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/" title="Swagger技术概述">     <img class="post_bg" src="/img/81691339_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Swagger技术概述"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/05/13/Swagger%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/" title="Swagger技术概述">Swagger技术概述</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-05-13T07:38:09.000Z" title="Created 2021-05-13 15:38:09">2021-05-13</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/SpringBoot/">SpringBoot</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Swagger/">Swagger</a></span></div><div class="content">Swagger技术概述Swagger出现的原因，很大程度上是由于前后端开发人员对于接口文档，无法做到高效的同步。前端人员苦于接口文档老旧，更新不及时，后端人员苦于在任务外另外维护接口文档。故而随着项目开发时间的推移，就导致项目的接口文档老旧，使用性差等问题暴露出来。
+为解决这一问题而出现的Swagger，通过总结规范，开发项目工具，实现生成各种格式的接口文档，生成多种语言的客户端和服务端的代码，以及在线接口调试页面等。按照新的开发模式，在开发新版本或者迭代版本的时候，只需要更新Swagger描述文件，就可以自动生成接口文档和客户端服务端代码，做到调用端代码、服务端代码以及接口文档的一致性。
+Swagger开发流程1. 在SpringBoot项目中引入相关依赖1234567891011&lt;!-- swagger API框架--&gt;&lt;dependency&gt;    &lt;groupId&gt;io.springfox&lt;/groupId&gt;    &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;    ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/04/19/4-%E5%9F%BA%E4%BA%8ESpringBoot%E7%9A%84Web%E5%BC%80%E5%8F%91/" title="4-基于SpringBoot的Web开发">     <img class="post_bg" src="/img/83821828_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="4-基于SpringBoot的Web开发"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/19/4-%E5%9F%BA%E4%BA%8ESpringBoot%E7%9A%84Web%E5%BC%80%E5%8F%91/" title="4-基于SpringBoot的Web开发">4-基于SpringBoot的Web开发</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-04-19T07:17:22.000Z" title="Created 2021-04-19 15:17:22">2021-04-19</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/SpringBoot/">SpringBoot</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Spring/">Spring</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/SpringMVC/">SpringMVC</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/MyBatis/">MyBatis</a></span></div><div class="content">基于SpringBoot的Web开发流程静态资源的导入SpringBoot项目中的静态资源有两种访问方式
+通过webjars访问首先引入相关依赖
+12345678910&lt;dependency&gt;&lt;!--Webjars版本定位工具（前端）--&gt;    &lt;groupId&gt;org.webjars&lt;/groupId&gt;    &lt;artifactId&gt;webjars-locator-core&lt;/artifactId&gt;&lt;/dependency&gt;&lt;dependency&gt;&lt;!--Jquery组件（前端）--&gt;    &lt;groupId&gt;org.webjars&lt;/groupId&gt;    &lt;artifactId&gt;jquery&lt;/artifactId&gt;    &lt;version&gt;3.3.1&lt;/version&gt;&lt;/dependency&gt;
+
+根据webjars路径访问静态资源，快速访问：http://localhost:8080/ ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/04/19/3-Lombok%E5%BA%94%E7%94%A8/" title="3-Lombok应用">     <img class="post_bg" src="/img/73143110_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="3-Lombok应用"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/19/3-Lombok%E5%BA%94%E7%94%A8/" title="3-Lombok应用">3-Lombok应用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-04-19T06:14:02.000Z" title="Created 2021-04-19 14:14:02">2021-04-19</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/SpringBoot/">SpringBoot</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Spring/">Spring</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Lombok/">Lombok</a></span></div><div class="content">Lombok应用在SpringBoot中整合SSM项目的过程中，不可避免的涉及对数据库的操作，既然有对数据库的操作就必然包括依据数据库结构创建POJO，而POJO创建过程重复度高，并且使得代码看起来冗杂，这种情况下可以通过使用Lombok插件，通过注解的方式，简化POJO的创建过程
+使用过程1. 在IDEA中安装Lombok插件
+2. 添加Lombok对应的依赖到项目pom.xml文件中1234&lt;dependency&gt;    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;    &lt;artifactId&gt;lombok&lt;/artifactId&gt;&lt;/dependency&gt;
+
+
+
+3. 改造实体类，使用Lombok方式配置基本注解
+@Data：自动提供getter和setter，hashCode，equals，toString等方法
+@Getter：自动提供Getter方法
+@Setter：自动提供Setter方法
+@Slf4j：自动在bean中提供log变量（本质还是使用slf4j的日志功能）
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/04/18/14-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0Relation-Algebra/" title="14-关系代数Relation Algebra">     <img class="post_bg" src="/img/83821828_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="14-关系代数Relation Algebra"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/18/14-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0Relation-Algebra/" title="14-关系代数Relation Algebra">14-关系代数Relation Algebra</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-04-18T14:08:18.000Z" title="Created 2021-04-18 22:08:18">2021-04-18</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/MySQL/">MySQL</a></span></div><div class="content">关系代数Relation Algebra概述
+关系代数是一种抽象的查询语言，用对关系的运算来表达查询，作为研究关系数据语言的数学工具。关系代数的运算对象是关系（集合），运算结果亦为关系（集合）。
+
+
+传统的集合运算：广义笛卡尔积运算，并，交和差运算
+专门的关系运算：选择，投影，连接和除运算
+
+传统的集合运算基本概念设关系模式为$R(A_1,A_2,…,A_n)$
+
+R表示关系模式$R(A_1,A_2,…,A_n)$的一个关系
+t表示元组，$t\in R$表示t是R的一个元组，可以理解为数据库某一表中一行实例
+$t[A_i]$表示元组t中相对应于属性$A_i$的一个分量，即表中t元组中$A_i$属性所对应单元格的值
+若$A=\lbrace A_{i1},A_{i2},A_{i3},…,A_{ik}\rbrace$，其中$A_{i1},A_{i2},….,A_{ik}$是$A_1,A_2,…,A_n$中的一部分，则称A为属性列或属性组，简单来说，属性组就是一个关系所有属性的一个子集
+$t[A]=(t[A_{i1}],t[A_{i2}],…,t[A_{ik}])$表示元组t在属性列A上诸分量 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/04/17/2-Yaml%E6%96%87%E4%BB%B6/" title="2-Yaml文件">     <img class="post_bg" src="/img/66150863_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2-Yaml文件"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/17/2-Yaml%E6%96%87%E4%BB%B6/" title="2-Yaml文件">2-Yaml文件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-04-17T12:49:56.000Z" title="Created 2021-04-17 20:49:56">2021-04-17</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/SpringBoot/">SpringBoot</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Spring/">Spring</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Yaml/">Yaml</a></span></div><div class="content">Yaml文件SpringBoot使用一个全局配置文件，配置文件的名称是固定的，但文件类型有两种
+
+application.properties
+语法结构：key=value
+
+
+application.yaml  (推荐)
+语法结构： key: value
+注意冒号后边必须跟空格，否则语法结构错误（约定大于配置的体现）
+
+
+
+YAML 是 “YAML Ain’t a Markup Language”（YAML 不是一种标记语言）的递归缩写。在开发的这种语言时，YAML 的意思其实是：”Yet Another Markup Language”（仍是一种标记语言）。
+YAML 的语法和其他高级语言类似，并且可以简单表达清单、散列表，标量等数据形态。它使用空白符号缩进和大量依赖外观的特色，特别适合用来表达或编辑数据结构、各种配置文件、倾印调试内容、文件大纲（例如：许多电子邮件标题格式和YAML非常接近）。
+YAML 的配置文件后缀为 .yml，如：application.yml 
+Yaml文件基本语法1234567891011121314151617181920# yaml配置文件可以注入到 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/04/17/1-SpringBoot%E5%9F%BA%E7%A1%80/" title="1-SpringBoot基础">     <img class="post_bg" src="/img/81934649_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1-SpringBoot基础"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/17/1-SpringBoot%E5%9F%BA%E7%A1%80/" title="1-SpringBoot基础">1-SpringBoot基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-04-17T05:55:08.000Z" title="Created 2021-04-17 13:55:08">2021-04-17</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/SpringBoot/">SpringBoot</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Spring/">Spring</a></span></div><div class="content">SpringBoot基础
+SpringBoot是由Pivotal团队在2013年开始研发、2014年4月发布第一个版本的全新开源的轻量级框架。它基于Spring4.0设计，不仅继承了Spring框架原有的优秀特性，而且还通过简化配置来进一步简化了Spring应用的整个搭建和开发过程。另外SpringBoot通过集成大量的框架使得依赖包的版本冲突，以及引用的不稳定性等问题得到了很好的解决。
+
+SpringBoot所具备的特征有：
+
+可以创建独立的Spring应用程序，并且基于其Maven或Gradle插件，可以创建可执行的JARs和WARs；
+内嵌Tomcat或Jetty等Servlet容器；
+提供自动配置的“starter”项目对象模型（POMS）以简化Maven配置；
+尽可能自动配置Spring容器；
+提供准备好的特性，如指标、健康检查和外部化配置；
+绝对没有代码生成，不需要XML配置。
+
+IDEA快速部署SpringBoot项目通过SpringInitializr创建SpringBoot项目,配置相关信息
+自动配置SpringWeb
+完成项目部署
+编写Controller层，测试结 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/04/16/4-%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%88%E4%B8%8A%EF%BC%89/" title="4-网络层（上）">     <img class="post_bg" src="/img/72581222_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="4-网络层（上）"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/16/4-%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%88%E4%B8%8A%EF%BC%89/" title="4-网络层（上）">4-网络层（上）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-04-16T13:13:18.000Z" title="Created 2021-04-16 21:13:18">2021-04-16</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></span></div><div class="content">网络层基础在参考模型中网络层位于传输层之下，链路层之上。
+网络层的功能主要是将源端产生的数据包/分组，送达至目的机
+完成这项工作需要：
+封装源数据
+识别目的机
+找到一条好的路径（路由）
+
+可能遭遇的问题：
+地址不够用
+丢包
+拥塞
+
+网络层主要内容被路由协议：IP协议
+IP地址：定位目的机
+IP分组：解决信息封装
+IPv6：新一代IP协议
+
+路由选择协议：找到目的机和源机之间的最优路径
+距离矢量路由选择协议（RIP）
+链路状态路由选择协议（OSPF）
+
+其他方面：
+ARP
+ICMP
+CIDR
+NAT
+
+源和目的机之间的网络分为：数据报网络：提供无连接的服务
+
+虚电路网络：提供面向连接的服务
+
+
+
+
+比较项目
+数据报子网（无连接服务）
+虚电路子网（面向连接服务）
+
+
+
+建立电路
+不需要
+要求
+
+
+地址信息
+每个分组含完整的SA和DA
+每个VC包含一个很短的VC号码
+
+
+状态信息
+路由器不保留任何连接状态信息
+每个VC都要求路由器建立表项
+
+
+路由
+每个分组独立选择路由
+每个分组沿建立VC时确定的路由
+
+
+路由器失效影响
+没有，只有系统崩溃时丢失分组
+所有经过失效R的VC都终止
+
+
+服务质量 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/04/07/4-Dockerfile/" title="4-Dockerfile And Docker Compose">     <img class="post_bg" src="/img/80857290_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="4-Dockerfile And Docker Compose"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/07/4-Dockerfile/" title="4-Dockerfile And Docker Compose">4-Dockerfile And Docker Compose</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-04-07T00:39:56.000Z" title="Created 2021-04-07 08:39:56">2021-04-07</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Docker/">Docker</a></span></div><div class="content">DockerfileDocker镜像原理Linux文件系统由bootfs与rootfs两部分构成
+
+
+bootfs：包含bootloader（引导加载程序）和kernel（内核）
+rootfs：root文件系统，包含的就是典型的Linux系统中的/dev,/proc,/bin,/etc等标准文件与目录
+不同的Linux发行版bootfs基本相同，主要区别在于rootfs
+
+而Docker镜像是由特殊的文件系统叠加而成，其最底端同样依赖bootfs，但是其不需要自己独立拥有bootfs，其可以直接使用宿主机的bootfs。第二层是root文件系统rootfs，被称为base image即基础镜像。
+在其上可以继续叠加其他镜像，而各个镜像之间的文件目录资源等可以相互共享，进一步提高了镜像利用率
+
+统一文件系统（UFS：Union File System）：该技术能够将不同层镜像整合为一个文件系统，为这些层提供一个统一的对外视角，这样就隐藏了多层存在，从用户角度来看，只暴露了最外层文件系统
+一个镜像可以位于另一个镜像下层，位于下层的镜像被称为父镜像，最底部的镜像称为基础镜像
+当从一个镜像启动 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/04/06/3-Docker%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2/" title="3-Docker应用部署">     <img class="post_bg" src="/img/80857290_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="3-Docker应用部署"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/06/3-Docker%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2/" title="3-Docker应用部署">3-Docker应用部署</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-04-06T11:18:53.000Z" title="Created 2021-04-06 19:18:53">2021-04-06</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Docker/">Docker</a></span></div><div class="content">Docker应用部署一般部署步骤
+搜索镜像
+拉取镜像
+创建容器
+操作容器
+
+部署MySQL前文说到，Docker容器本身不能直接与外部机器通信，其只能与宿主机直接通信，而宿主机又可以直接与外部机器通信，所以想要访问Docker容器，就可以将Docker容器的端口映射到宿主机的端口上（一般都对应到相同端口），这样就可以利用宿主机的端口间接访问Docker容器，即端口映射
+
+12345678910111213# 搜索镜像docker search mysql# 拉取镜像docker pull mysql# 创建容器,注意创建容器前，在根目录下创建mysql文件夹并进入该目录下，后续数据卷的安装在/root/mysql下进行docker run -id \-p 3306:3306 \ # 配置端口映射--name c_mysql \-v $PWD/conf:/etc/mysql/conf.d \ # 配置配置文件数据卷，$PWD表示当前所在文件夹路径-v $PWD/logs:/logs \ # 配置日志数据卷-v $PWD/data:/var/lib/mysql \ # 配置存放数据的数据卷 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/04/06/2-Docker%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%8D%B7/" title="2-Docker容器数据卷">     <img class="post_bg" src="/img/81934649_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2-Docker容器数据卷"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/04/06/2-Docker%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%8D%B7/" title="2-Docker容器数据卷">2-Docker容器数据卷</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-04-06T07:41:07.000Z" title="Created 2021-04-06 15:41:07">2021-04-06</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Docker/">Docker</a></span></div><div class="content">Docker容器数据卷数据卷概述实际开发中，数据的持久化以及数据交互都是十分重要的功能，所以Docker需要处理以下问题
+
+Docker容器删除后，容器中的应用数据是否被删除
+Docker容器与外部机器（宿主机与网络机器）间如何进行文件交互
+Docker容器之间如何进行文件的交换
+
+面对以上问题，Docker提供了数据卷的概念，数据卷是宿主机中的一个目录或文件，当容器与数据卷目录绑定（挂载）后，双方对数据卷的修改会立即同步，数据卷与容器不是一一对应的关系，一个数据卷可以挂载多个容器，一个容器也可以被挂载多个数据卷
+数据卷的作用
+保证容器数据的持久化
+实现容器与宿主机之间的文件交换
+实现Docker容器之间的文件交换
+
+配置数据卷配置数据卷只需要在创建容器时利用-v参数指定宿主机路径与容器路径的挂载关系
+1234# 创建容器时，使用-v参数设置数据卷docker run -it --name test1 -v 宿主机目录(或文件):容器内目录(或文件) ...# 例如：docker run -it --name centosTest1 -v /root/data:/root/data_c ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#content-inner">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/#content-inner">14</a><a class="extend next" rel="next" href="/page/6/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/ywrby.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ywrby</div><div class="author-info__description">Students majoring in CS at SWU</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">132</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">25</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ywrby"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:ywrby0214@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/353923033" target="_blank" title="Bilibili"><i class="fas fa-file-video"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2278431384&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://twitter.com/ywrby1" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="https://www.facebook.com/profile.php?id=100033741068822" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">Less is more</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/03/%E9%9B%86%E4%B9%90-%E7%BB%9F%E4%B8%80%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" title="集乐-统一多媒体文件资源管理器-开发记录"><img src="/img/73870940_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="集乐-统一多媒体文件资源管理器-开发记录"/></a><div class="content"><a class="title" href="/2022/10/03/%E9%9B%86%E4%B9%90-%E7%BB%9F%E4%B8%80%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" title="集乐-统一多媒体文件资源管理器-开发记录">集乐-统一多媒体文件资源管理器-开发记录</a><time datetime="2022-10-03T14:18:40.000Z" title="Created 2022-10-03 22:18:40">2022-10-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/24/IndexedDB%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" title="IndexedDB浏览器数据库基本概念"><img src="/img/illust_3518827_20191113_165540.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IndexedDB浏览器数据库基本概念"/></a><div class="content"><a class="title" href="/2022/01/24/IndexedDB%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" title="IndexedDB浏览器数据库基本概念">IndexedDB浏览器数据库基本概念</a><time datetime="2022-01-24T09:15:29.000Z" title="Created 2022-01-24 17:15:29">2022-01-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/29/25-%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8/" title="25-两级页表"><img src="/img/81691339_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="25-两级页表"/></a><div class="content"><a class="title" href="/2021/12/29/25-%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8/" title="25-两级页表">25-两级页表</a><time datetime="2021-12-29T10:16:26.000Z" title="Created 2021-12-29 18:16:26">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/27/24-%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/" title="24-基本分页存储管理"><img src="/img/81934649_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="24-基本分页存储管理"/></a><div class="content"><a class="title" href="/2021/12/27/24-%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/" title="24-基本分页存储管理">24-基本分页存储管理</a><time datetime="2021-12-27T12:13:32.000Z" title="Created 2021-12-27 20:13:32">2021-12-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/25/23-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6/" title="23-内存空间的分配与回收"><img src="/img/67888138_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="23-内存空间的分配与回收"/></a><div class="content"><a class="title" href="/2021/12/25/23-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6/" title="23-内存空间的分配与回收">23-内存空间的分配与回收</a><time datetime="2021-12-25T11:12:46.000Z" title="Created 2021-12-25 19:12:46">2021-12-25</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/Docker/" style="font-size: 1.21em; color: #999da3">Docker</a> <a href="/tags/Electron/" style="font-size: 1.14em; color: #999a9c">Electron</a> <a href="/tags/IndexedDB/" style="font-size: 1.1em; color: #999">IndexedDB</a> <a href="/tags/JVM/" style="font-size: 1.1em; color: #999">JVM</a> <a href="/tags/Java/" style="font-size: 1.39em; color: #99a5b5">Java</a> <a href="/tags/JavaScript/" style="font-size: 1.21em; color: #999da3">JavaScript</a> <a href="/tags/JavaWeb/" style="font-size: 1.5em; color: #99a9bf">JavaWeb</a> <a href="/tags/Lombok/" style="font-size: 1.1em; color: #999">Lombok</a> <a href="/tags/MyBatis/" style="font-size: 1.25em; color: #999fa7">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 1.35em; color: #99a3b1">MySQL</a> <a href="/tags/P2P/" style="font-size: 1.1em; color: #999">P2P</a> <a href="/tags/Spring/" style="font-size: 1.43em; color: #99a6b8">Spring</a> <a href="/tags/SpringBoot/" style="font-size: 1.28em; color: #99a0aa">SpringBoot</a> <a href="/tags/SpringMVC/" style="font-size: 1.32em; color: #99a2ae">SpringMVC</a> <a href="/tags/Swagger/" style="font-size: 1.1em; color: #999">Swagger</a> <a href="/tags/Vue/" style="font-size: 1.21em; color: #999da3">Vue</a> <a href="/tags/Yaml/" style="font-size: 1.1em; color: #999">Yaml</a> <a href="/tags/tio/" style="font-size: 1.1em; color: #999">tio</a> <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" style="font-size: 1.17em; color: #999ca0">区块链</a> <a href="/tags/%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" style="font-size: 1.1em; color: #999">开发记录</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.46em; color: #99a8bc">操作系统</a> <a href="/tags/%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/" style="font-size: 1.1em; color: #999">演化博弈</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.1em; color: #999">算法</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.32em; color: #99a2ae">计算机网络</a> <a href="/tags/%E9%9B%86%E4%B9%90/" style="font-size: 1.1em; color: #999">集乐</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="More">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">October 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">January 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">December 2021</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">November 2021</span><span class="card-archive-list-count">21</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/09/"><span class="card-archive-list-date">September 2021</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/07/"><span class="card-archive-list-date">July 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">June 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">May 2021</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">132</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-05-26T14:05:33.773Z"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/back.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Ywrby</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "Less is more".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = 'L'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script></div><div class="aplayer no-destroy" data-id="5402995011" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-lrctype=0	data-order="random" data-preload="none" data-autoplay="true" muted></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

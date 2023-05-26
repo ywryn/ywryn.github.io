@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>1-归并排序-算法复习 | Ywrby个人博客网站</title><meta name="keywords" content="算法"><meta name="author" content="Ywrby"><meta name="copyright" content="Ywrby"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="归并要了解归并排序算法首先要了解归并这一过程，归并过程处理两个可比较数组（两个数组已经各自有序），在归并过程中，不断对两个数组的当前首元素进行比较，将较小的元素放置到新数组的下一位置。 归并实现：(原地归并的抽象方法)123456789101112131415161718192021222324252627282930package cn.ywrby.test;public class Merge">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1-归并排序-算法复习">
+<meta property="og:url" content="http://ywrby.com/2021/11/07/1-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Ywrby个人博客网站">
+<meta property="og:description" content="归并要了解归并排序算法首先要了解归并这一过程，归并过程处理两个可比较数组（两个数组已经各自有序），在归并过程中，不断对两个数组的当前首元素进行比较，将较小的元素放置到新数组的下一位置。 归并实现：(原地归并的抽象方法)123456789101112131415161718192021222324252627282930package cn.ywrby.test;public class Merge">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://ywrby.com/img/73870940_p0.jpg">
+<meta property="article:published_time" content="2021-11-07T10:40:55.000Z">
+<meta property="article:modified_time" content="2021-11-08T06:58:01.571Z">
+<meta property="article:author" content="Ywrby">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ywrby.com/img/73870940_p0.jpg"><link rel="shortcut icon" href="/img/title.png"><link rel="canonical" href="http://ywrby.com/2021/11/07/1-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '1-归并排序-算法复习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-11-08 14:58:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Ywrby个人博客网站" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/ywrby.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">132</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">25</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Bilibili</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 追番列表</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://space.bilibili.com/353923033"><i class="fa-fw fas fa-music"></i><span> B站主页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/73870940_p0.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Ywrby个人博客网站</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Bilibili</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 追番列表</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://space.bilibili.com/353923033"><i class="fa-fw fas fa-music"></i><span> B站主页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">1-归并排序-算法复习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-11-07T10:40:55.000Z" title="Created 2021-11-07 18:40:55">2021-11-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-11-08T06:58:01.571Z" title="Updated 2021-11-08 14:58:01">2021-11-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="1-归并排序-算法复习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="归并"><a href="#归并" class="headerlink" title="归并"></a>归并</h1><p>要了解归并排序算法首先要了解归并这一过程，归并过程处理两个可比较数组（两个数组已经各自有序），在归并过程中，不断对两个数组的当前首元素进行比较，将较小的元素放置到新数组的下一位置。</p>
+<h2 id="归并实现：-原地归并的抽象方法"><a href="#归并实现：-原地归并的抽象方法" class="headerlink" title="归并实现：(原地归并的抽象方法)"></a>归并实现：(原地归并的抽象方法)</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.ywrby.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MergeTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Comparable v, Comparable w)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> v.compareTo(w) &lt; <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//原地归并的抽象实现</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 参数a表示已经部分有序的原数组（前一部分，后一部分分别有序）</span></span><br><span class="line"><span class="comment">    * 参数lo表示前一部分数组的首元素（前一部分最小值）</span></span><br><span class="line"><span class="comment">    * 参数mid表示前一部分数组最后一个元素（后一部分数组首元素的前一位，前一部分最大值）</span></span><br><span class="line"><span class="comment">    * 参数hi表示后一部分数组最后一位(后一部分最大值)</span></span><br><span class="line"><span class="comment">    * */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">MergeTest</span><span class="params">(Comparable[] a,<span class="keyword">int</span> lo,<span class="keyword">int</span> mid,<span class="keyword">int</span> hi)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i=lo,j=mid+<span class="number">1</span>;</span><br><span class="line">        Comparable[] aux=<span class="keyword">new</span> Comparable[hi+<span class="number">1</span>];</span><br><span class="line">        <span class="comment">//通过遍历复制原数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k=lo;k&lt;=hi;k++)&#123;</span><br><span class="line">            aux[k]=a[k];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//对原数组进行归并</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=lo;k&lt;=hi;k++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i&gt;mid) a[k]=aux[j++];  <span class="comment">//若前一部分数组元素用尽，就取后一部分数组元素</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(j&gt;hi) a[k]=aux[i++];  <span class="comment">//若后一部分数组元素，就取前一部分数组元素</span></span><br><span class="line">            <span class="comment">// 两个都没有用尽，就比较两数组当前首元素大小，取二者中较小的</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(less(aux[j],aux[i])) a[k]=aux[j++];  </span><br><span class="line">            <span class="keyword">else</span> a[k]=aux[i++];  </span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="自顶向下的归并排序"><a href="#自顶向下的归并排序" class="headerlink" title="自顶向下的归并排序"></a>自顶向下的归并排序</h1><p>基于原地归并的抽象实现完成的一种递归排序，首先不断对原数组进行分割，直至不能分割（每个数组中仅含一个元素），然后以每两个数组进行归并（因为只有一个元素，所以数组有序），经过一轮归并，数组中元素为2个或1个，继续递归进行归并排序，直至数组全部归并只剩一个</p>
+<p>整个过程利用了分治思想，将一个大问题拆解为若干个简单的小问题加以解决</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.ywrby.sorts;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.ywrby.tools.StopWatch;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//自顶向下的归并排序</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MergeSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Comparable v, Comparable w)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> v.compareTo(w) &lt; <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Comparable[] aux;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//原地归并的抽象实现</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 参数a表示已经部分有序的原数组（前一部分，后一部分分别有序）</span></span><br><span class="line"><span class="comment">     * 参数lo表示前一部分数组的首元素（前一部分最小值）</span></span><br><span class="line"><span class="comment">     * 参数mid表示前一部分数组最后一个元素（后一部分数组首元素的前一位，前一部分最大值）</span></span><br><span class="line"><span class="comment">     * 参数hi表示后一部分数组最后一位(后一部分最大值)</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(Comparable[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> mid, <span class="keyword">int</span> hi)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = lo, j = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = lo; k &lt;= hi; k++) &#123;</span><br><span class="line">            aux[k] = a[k];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//对原数组进行归并</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = lo; k &lt;= hi; k++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; mid) a[k] = aux[j++];  <span class="comment">//若前一部分数组元素用尽，就取后一部分数组元素</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (j &gt; hi) a[k] = aux[i++];  <span class="comment">//若后一部分数组元素，就取前一部分数组元素</span></span><br><span class="line">                <span class="comment">// 两个都没有用尽，就比较两数组当前首元素大小，取二者中较小的</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (less(aux[j], aux[i])) a[k] = aux[j++];</span><br><span class="line">            <span class="keyword">else</span> a[k] = aux[i++];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//准备额外空间用于盛放排序后的数组</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span> </span>&#123;</span><br><span class="line">        aux = <span class="keyword">new</span> Comparable[a.length];</span><br><span class="line">        sort(a, <span class="number">0</span>, a.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*基于原地归并的抽象实现完成的一种递归排序</span></span><br><span class="line"><span class="comment">     *首先不断对原数组进行分割，直至不能分割（每个数组中仅含一个元素）</span></span><br><span class="line"><span class="comment">     *然后以每两个数组进行归并（因为只有一个元素，所以数组有序）</span></span><br><span class="line"><span class="comment">     *经过一轮归并，数组中元素为2个或1个</span></span><br><span class="line"><span class="comment">     *继续递归进行归并排序，直至数组全部归并只剩一个</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> hi)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (hi &lt;= lo) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> mid = lo + (hi - lo) / <span class="number">2</span>;</span><br><span class="line">        sort(a, lo, mid);</span><br><span class="line">        sort(a, mid + <span class="number">1</span>, hi);</span><br><span class="line">        merge(a, lo, mid, hi);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(Comparable[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        Comparable temp = a[i];</span><br><span class="line">        a[i] = a[j];</span><br><span class="line">        a[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Comparable[] a)</span> </span>&#123;</span><br><span class="line">        System.out.print(<span class="string">&quot;After sort : &quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">            System.out.print(a[i] + <span class="string">&quot;  &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isSorted</span><span class="params">(Comparable[] a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!less(a[i], a[i + <span class="number">1</span>])) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> N = <span class="number">1000</span>;</span><br><span class="line">        Comparable&lt;Double&gt;[] test = <span class="keyword">new</span> Comparable[N];</span><br><span class="line">        System.out.print(<span class="string">&quot;before sort : &quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">            <span class="keyword">double</span> data = Math.random();</span><br><span class="line">            System.out.print(data + <span class="string">&quot;  &quot;</span>);</span><br><span class="line">            test[i] = data;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">        StopWatch watch = <span class="keyword">new</span> StopWatch();</span><br><span class="line">        sort(test);</span><br><span class="line">        <span class="keyword">double</span> time = watch.elapsedTime();</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * assert关键字：assert [boolean 表达式]</span></span><br><span class="line"><span class="comment">         * 如果[boolean表达式]为true，则程序继续执行。</span></span><br><span class="line"><span class="comment">         * 如果为false，则程序抛出AssertionError，并终止执行。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">assert</span> <span class="title">isSorted</span><span class="params">(test)</span></span>;</span><br><span class="line">        show(test);</span><br><span class="line">        System.out.println(<span class="string">&quot;time=&quot;</span> + time);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>对于长度为N的任意数组，自顶向下的归并排序需要NlgN/2~NlgN次++比较++</p>
+<p>令C(N)表示一个长度为N的数组需要进行比较的次数。易知：C(0)=C(1)=0,且自顶向下排序采用了递归的方法，所以可以写成：<br>$$C(N)&lt;=C_{前}(N/2)+C_{后}(N/2)+N$$</p>
+<p>第一项表示数组前半部分比较次数，第二项则表示后半部分比较次数，最后一项表示将两项归并到一起所需要的最大比较次数</p>
+<p>$$C(N)&gt;=C_{前}(N/2)+C_{后}(N/2)+N/2$$<br>同理最后一项表示归并时最小比较次数</p>
+<p>以$N=2^n$时为例下的++最坏情况++进行分析，可以得到如下结论：</p>
+<p>$$C(2^n)=C_{前}(2^{n-1})+C_{后}(2^{n-1})+2^n=2*C(2^{n-1})+2^n$$<br>将上式两边同时除以2^n得到：</p>
+<p>$$C(2^n)/2^n=C(2^{n-1})/2^{n-1}+1$$<br>利用该式可以替换右边第一项得到：</p>
+<p>$$C(2^n)/2^n=C(2^{n-2})/2^{n-2}+1+1$$<br>重复n次得到<br>$$C(2^n)/2^n=C(0)/2^{0}+n=n$$<br>因此</p>
+<p>$$C(2^n)=n<em>2^n$$<br>进而由N=2^n得到<br>$$C(N)=N</em>lgN$$</p>
+<p>虽然这是对特殊情况的一种讨论，但我们不难理解这对任意N是普遍适用的</p>
+<hr>
+<p>对于长度为N的任意数组，自顶向下的归并排序最多需要++访问数组++6NlgN次</p>
+<p>每次归并最多访问数组6N次（第一个for循环的复制过程2N次，比较过程中最多2N次，将排序好的元素放回2N次），所以由上一个命题易知，最多需要访问数组6NlgN次</p>
+<hr>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>运行时间与NlgN成正比，所以可以处理数百万甚至更大规模数组，这是初级排序算法无法做到的</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>辅助数组所使用的额外空间与N成正比</p>
+<hr>
+<h3 id="算法优化"><a href="#算法优化" class="headerlink" title="算法优化"></a>算法优化</h3><ol>
+<li>对小规模数组使用插入排序而不是始终递归</li>
+<li>添加方法以测试数组是否已经有序(a[mid]&lt;=a[mid+1])</li>
+<li>不将元素复制到辅助数组</li>
+</ol>
+<hr>
+<h1 id="自底向上的归并排序"><a href="#自底向上的归并排序" class="headerlink" title="自底向上的归并排序"></a>自底向上的归并排序</h1><p>自底向上的归并排序会遍历整个数组，根据子数组大小进行两两排序。子数组的大小sz的初始值为1，每次加倍。最后一个字数组的大小只有在数组大小是sz的偶数倍的时候才会等于sz(否则会比sz小)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.ywrby.sorts;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.ywrby.tools.StopWatch;</span><br><span class="line"></span><br><span class="line"><span class="comment">//自底向上的归并排序</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MergeBuSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">less</span><span class="params">(Comparable v, Comparable w)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> v.compareTo(w) &lt; <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Comparable[] aux;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(Comparable[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> mid, <span class="keyword">int</span> hi)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = lo, j = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = lo; k &lt;= hi; k++) &#123;</span><br><span class="line">            aux[k] = a[k];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//对原数组进行归并</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = lo; k &lt;= hi; k++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; mid) a[k] = aux[j++];  <span class="comment">//若前一部分数组元素用尽，就取后一部分数组元素</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (j &gt; hi) a[k] = aux[i++];  <span class="comment">//若后一部分数组元素，就取前一部分数组元素</span></span><br><span class="line">                <span class="comment">// 两个都没有用尽，就比较两数组当前首元素大小，取二者中较小的</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (less(aux[j], aux[i])) a[k] = aux[j++];</span><br><span class="line">            <span class="keyword">else</span> a[k] = aux[i++];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(Comparable[] a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> N=a.length;</span><br><span class="line">        aux=<span class="keyword">new</span> Comparable[a.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> sz=<span class="number">1</span>;sz&lt;N;sz*=<span class="number">2</span>)&#123;  <span class="comment">//sz：子数组大小</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> lo=<span class="number">0</span>;lo&lt;N-sz;lo+=sz*<span class="number">2</span>)&#123;  <span class="comment">//lo：子数组索引</span></span><br><span class="line">                merge(a,lo,lo+sz-<span class="number">1</span>,Math.min(lo+sz*<span class="number">2</span>-<span class="number">1</span>,N-<span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(Comparable[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        Comparable temp = a[i];</span><br><span class="line">        a[i] = a[j];</span><br><span class="line">        a[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Comparable[] a)</span> </span>&#123;</span><br><span class="line">        System.out.print(<span class="string">&quot;After sort : &quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">            System.out.print(a[i] + <span class="string">&quot;  &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isSorted</span><span class="params">(Comparable[] a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length-<span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!less(a[i],a[i+<span class="number">1</span>]))&#123;<span class="keyword">return</span> <span class="keyword">false</span>;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> N=<span class="number">100</span>;</span><br><span class="line">        Comparable&lt;Double&gt;[] test=<span class="keyword">new</span> Comparable[N];</span><br><span class="line">        System.out.print(<span class="string">&quot;before sort : &quot;</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++)&#123;</span><br><span class="line">            <span class="keyword">double</span> data=Math.random();</span><br><span class="line">            System.out.print(data+<span class="string">&quot;  &quot;</span>);</span><br><span class="line">            test[i]=data;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">        StopWatch watch=<span class="keyword">new</span> StopWatch();</span><br><span class="line">        sort(test);</span><br><span class="line">        <span class="keyword">double</span> time=watch.elapsedTime();</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * assert关键字：assert [boolean 表达式]</span></span><br><span class="line"><span class="comment">         * 如果[boolean表达式]为true，则程序继续执行。</span></span><br><span class="line"><span class="comment">         * 如果为false，则程序抛出AssertionError，并终止执行。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">assert</span> <span class="title">isSorted</span><span class="params">(test)</span></span>;</span><br><span class="line">        show(test);</span><br><span class="line">        System.out.println(<span class="string">&quot;time=&quot;</span>+time);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="归并排序的局限性"><a href="#归并排序的局限性" class="headerlink" title="归并排序的局限性"></a>归并排序的局限性</h1><ol>
+<li>归并排序的空间复杂度不是最优的</li>
+<li>除了比较，算法的其他操作（访问数组）也可能很重要</li>
+<li>不进行比较也能将某些数据排序</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Ywrby</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://ywrby.com/2021/11/07/1-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/">http://ywrby.com/2021/11/07/1-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a></div><div class="post_share"><div class="social-share" data-image="/img/73870940_p0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/11/08/15-%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6/"><img class="prev-cover" src="/img/72175872_p0.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">15-信号量机制</div></div></a></div><div class="next-post pull-right"><a href="/2021/11/07/14-%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5/"><img class="next-cover" src="/img/66150863_p0.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">14-进程同步与进程互斥</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/ywrby.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ywrby</div><div class="author-info__description">Students majoring in CS at SWU</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">132</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">25</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ywrby"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:ywrby0214@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/353923033" target="_blank" title="Bilibili"><i class="fas fa-file-video"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2278431384&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://twitter.com/ywrby1" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="https://www.facebook.com/profile.php?id=100033741068822" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">Less is more</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6"><span class="toc-number">1.</span> <span class="toc-text">归并</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E5%AE%9E%E7%8E%B0%EF%BC%9A-%E5%8E%9F%E5%9C%B0%E5%BD%92%E5%B9%B6%E7%9A%84%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">归并实现：(原地归并的抽象方法)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%9A%84%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-number">2.</span> <span class="toc-text">自顶向下的归并排序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">2.1.</span> <span class="toc-text">算法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">2.1.1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number">2.1.2.</span> <span class="toc-text">缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E4%BC%98%E5%8C%96"><span class="toc-number">2.1.3.</span> <span class="toc-text">算法优化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%BA%95%E5%90%91%E4%B8%8A%E7%9A%84%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-number">3.</span> <span class="toc-text">自底向上的归并排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-number">4.</span> <span class="toc-text">归并排序的局限性</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/03/%E9%9B%86%E4%B9%90-%E7%BB%9F%E4%B8%80%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" title="集乐-统一多媒体文件资源管理器-开发记录"><img src="/img/73870940_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="集乐-统一多媒体文件资源管理器-开发记录"/></a><div class="content"><a class="title" href="/2022/10/03/%E9%9B%86%E4%B9%90-%E7%BB%9F%E4%B8%80%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" title="集乐-统一多媒体文件资源管理器-开发记录">集乐-统一多媒体文件资源管理器-开发记录</a><time datetime="2022-10-03T14:18:40.000Z" title="Created 2022-10-03 22:18:40">2022-10-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/24/IndexedDB%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" title="IndexedDB浏览器数据库基本概念"><img src="/img/illust_3518827_20191113_165540.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IndexedDB浏览器数据库基本概念"/></a><div class="content"><a class="title" href="/2022/01/24/IndexedDB%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" title="IndexedDB浏览器数据库基本概念">IndexedDB浏览器数据库基本概念</a><time datetime="2022-01-24T09:15:29.000Z" title="Created 2022-01-24 17:15:29">2022-01-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/29/25-%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8/" title="25-两级页表"><img src="/img/81691339_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="25-两级页表"/></a><div class="content"><a class="title" href="/2021/12/29/25-%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8/" title="25-两级页表">25-两级页表</a><time datetime="2021-12-29T10:16:26.000Z" title="Created 2021-12-29 18:16:26">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/27/24-%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/" title="24-基本分页存储管理"><img src="/img/81934649_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="24-基本分页存储管理"/></a><div class="content"><a class="title" href="/2021/12/27/24-%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/" title="24-基本分页存储管理">24-基本分页存储管理</a><time datetime="2021-12-27T12:13:32.000Z" title="Created 2021-12-27 20:13:32">2021-12-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/25/23-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6/" title="23-内存空间的分配与回收"><img src="/img/67888138_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="23-内存空间的分配与回收"/></a><div class="content"><a class="title" href="/2021/12/25/23-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6/" title="23-内存空间的分配与回收">23-内存空间的分配与回收</a><time datetime="2021-12-25T11:12:46.000Z" title="Created 2021-12-25 19:12:46">2021-12-25</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/73870940_p0.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Ywrby</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'QkExI1n70lz2qs7pVpmFeKqp-gzGzoHsz',
+      appKey: 'WhG61iDj96bflhu6CIpmE9V8',
+      placeholder: 'Please leave your footprints',
+      avatar: 'mp',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="5402995011" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-lrctype=0	data-order="random" data-preload="none" data-autoplay="true" muted></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
