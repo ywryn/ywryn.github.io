@@ -3,11 +3,11 @@
   <title>Ywrby个人博客网站</title>
   
   <subtitle>less is more</subtitle>
-  <link href="http://ywrby.com/atom.xml" rel="self"/>
+  <link href="http://ywrby.cn/atom.xml" rel="self"/>
   
-  <link href="http://ywrby.com/"/>
+  <link href="http://ywrby.cn/"/>
   <updated>2022-10-03T04:18:16.619Z</updated>
-  <id>http://ywrby.com/</id>
+  <id>http://ywrby.cn/</id>
   
   <author>
     <name>Ywrby</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>集乐-统一多媒体文件资源管理器-开发记录</title>
-    <link href="http://ywrby.com/2022/10/03/%E9%9B%86%E4%B9%90-%E7%BB%9F%E4%B8%80%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/"/>
-    <id>http://ywrby.com/2022/10/03/%E9%9B%86%E4%B9%90-%E7%BB%9F%E4%B8%80%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://ywrby.cn/2022/10/03/%E9%9B%86%E4%B9%90-%E7%BB%9F%E4%B8%80%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/"/>
+    <id>http://ywrby.cn/2022/10/03/%E9%9B%86%E4%B9%90-%E7%BB%9F%E4%B8%80%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</id>
     <published>2022-10-03T14:18:40.000Z</published>
     <updated>2022-10-03T04:18:16.619Z</updated>
     
@@ -34,24 +34,24 @@
     
     
     
-    <category term="Electron" scheme="http://ywrby.com/tags/Electron/"/>
+    <category term="Electron" scheme="http://ywrby.cn/tags/Electron/"/>
     
-    <category term="Java" scheme="http://ywrby.com/tags/Java/"/>
+    <category term="Java" scheme="http://ywrby.cn/tags/Java/"/>
     
-    <category term="JavaWeb" scheme="http://ywrby.com/tags/JavaWeb/"/>
+    <category term="JavaWeb" scheme="http://ywrby.cn/tags/JavaWeb/"/>
     
-    <category term="Vue" scheme="http://ywrby.com/tags/Vue/"/>
+    <category term="Vue" scheme="http://ywrby.cn/tags/Vue/"/>
     
-    <category term="集乐" scheme="http://ywrby.com/tags/%E9%9B%86%E4%B9%90/"/>
+    <category term="集乐" scheme="http://ywrby.cn/tags/%E9%9B%86%E4%B9%90/"/>
     
-    <category term="开发记录" scheme="http://ywrby.com/tags/%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/"/>
+    <category term="开发记录" scheme="http://ywrby.cn/tags/%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>IndexedDB浏览器数据库基本概念</title>
-    <link href="http://ywrby.com/2022/01/24/IndexedDB%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
-    <id>http://ywrby.com/2022/01/24/IndexedDB%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</id>
+    <link href="http://ywrby.cn/2022/01/24/IndexedDB%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
+    <id>http://ywrby.cn/2022/01/24/IndexedDB%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</id>
     <published>2022-01-24T09:15:29.000Z</published>
     <updated>2022-10-03T03:44:48.363Z</updated>
     
@@ -67,14 +67,14 @@
     
     
     
-    <category term="IndexedDB" scheme="http://ywrby.com/tags/IndexedDB/"/>
+    <category term="IndexedDB" scheme="http://ywrby.cn/tags/IndexedDB/"/>
     
   </entry>
   
   <entry>
     <title>25-两级页表</title>
-    <link href="http://ywrby.com/2021/12/29/25-%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8/"/>
-    <id>http://ywrby.com/2021/12/29/25-%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8/</id>
+    <link href="http://ywrby.cn/2021/12/29/25-%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8/"/>
+    <id>http://ywrby.cn/2021/12/29/25-%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8/</id>
     <published>2021-12-29T10:16:26.000Z</published>
     <updated>2022-01-03T07:52:33.680Z</updated>
     
@@ -89,14 +89,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>24-基本分页存储管理</title>
-    <link href="http://ywrby.com/2021/12/27/24-%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/"/>
-    <id>http://ywrby.com/2021/12/27/24-%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/</id>
+    <link href="http://ywrby.cn/2021/12/27/24-%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/"/>
+    <id>http://ywrby.cn/2021/12/27/24-%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/</id>
     <published>2021-12-27T12:13:32.000Z</published>
     <updated>2021-12-29T10:29:40.716Z</updated>
     
@@ -111,14 +111,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>23-内存空间的分配与回收</title>
-    <link href="http://ywrby.com/2021/12/25/23-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6/"/>
-    <id>http://ywrby.com/2021/12/25/23-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6/</id>
+    <link href="http://ywrby.cn/2021/12/25/23-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6/"/>
+    <id>http://ywrby.cn/2021/12/25/23-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6/</id>
     <published>2021-12-25T11:12:46.000Z</published>
     <updated>2021-12-27T12:15:50.746Z</updated>
     
@@ -135,14 +135,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>22-内存空间扩充（覆盖与交换）</title>
-    <link href="http://ywrby.com/2021/12/25/22-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E6%89%A9%E5%85%85%EF%BC%88%E8%A6%86%E7%9B%96%E4%B8%8E%E4%BA%A4%E6%8D%A2%EF%BC%89/"/>
-    <id>http://ywrby.com/2021/12/25/22-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E6%89%A9%E5%85%85%EF%BC%88%E8%A6%86%E7%9B%96%E4%B8%8E%E4%BA%A4%E6%8D%A2%EF%BC%89/</id>
+    <link href="http://ywrby.cn/2021/12/25/22-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E6%89%A9%E5%85%85%EF%BC%88%E8%A6%86%E7%9B%96%E4%B8%8E%E4%BA%A4%E6%8D%A2%EF%BC%89/"/>
+    <id>http://ywrby.cn/2021/12/25/22-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E6%89%A9%E5%85%85%EF%BC%88%E8%A6%86%E7%9B%96%E4%B8%8E%E4%BA%A4%E6%8D%A2%EF%BC%89/</id>
     <published>2021-12-25T08:15:49.000Z</published>
     <updated>2021-12-25T08:57:12.142Z</updated>
     
@@ -157,14 +157,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>21-内存与内存管理</title>
-    <link href="http://ywrby.com/2021/12/19/21-%E5%86%85%E5%AD%98%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
-    <id>http://ywrby.com/2021/12/19/21-%E5%86%85%E5%AD%98%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</id>
+    <link href="http://ywrby.cn/2021/12/19/21-%E5%86%85%E5%AD%98%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
+    <id>http://ywrby.cn/2021/12/19/21-%E5%86%85%E5%AD%98%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</id>
     <published>2021-12-19T09:57:53.000Z</published>
     <updated>2021-12-21T13:07:26.420Z</updated>
     
@@ -180,14 +180,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>20-死锁</title>
-    <link href="http://ywrby.com/2021/12/11/20-%E6%AD%BB%E9%94%81/"/>
-    <id>http://ywrby.com/2021/12/11/20-%E6%AD%BB%E9%94%81/</id>
+    <link href="http://ywrby.cn/2021/12/11/20-%E6%AD%BB%E9%94%81/"/>
+    <id>http://ywrby.cn/2021/12/11/20-%E6%AD%BB%E9%94%81/</id>
     <published>2021-12-11T06:20:20.000Z</published>
     <updated>2021-12-19T09:57:03.669Z</updated>
     
@@ -202,14 +202,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>19-管程</title>
-    <link href="http://ywrby.com/2021/11/28/19-%E7%AE%A1%E7%A8%8B/"/>
-    <id>http://ywrby.com/2021/11/28/19-%E7%AE%A1%E7%A8%8B/</id>
+    <link href="http://ywrby.cn/2021/11/28/19-%E7%AE%A1%E7%A8%8B/"/>
+    <id>http://ywrby.cn/2021/11/28/19-%E7%AE%A1%E7%A8%8B/</id>
     <published>2021-11-28T08:39:08.000Z</published>
     <updated>2021-11-28T09:03:25.326Z</updated>
     
@@ -224,14 +224,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>18-信号量相关问题（吸烟者，读者-写者等）</title>
-    <link href="http://ywrby.com/2021/11/17/18-%E4%BF%A1%E5%8F%B7%E9%87%8F%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%88%E5%90%B8%E7%83%9F%E8%80%85%EF%BC%8C%E8%AF%BB%E8%80%85-%E5%86%99%E8%80%85%E7%AD%89%EF%BC%89/"/>
-    <id>http://ywrby.com/2021/11/17/18-%E4%BF%A1%E5%8F%B7%E9%87%8F%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%88%E5%90%B8%E7%83%9F%E8%80%85%EF%BC%8C%E8%AF%BB%E8%80%85-%E5%86%99%E8%80%85%E7%AD%89%EF%BC%89/</id>
+    <link href="http://ywrby.cn/2021/11/17/18-%E4%BF%A1%E5%8F%B7%E9%87%8F%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%88%E5%90%B8%E7%83%9F%E8%80%85%EF%BC%8C%E8%AF%BB%E8%80%85-%E5%86%99%E8%80%85%E7%AD%89%EF%BC%89/"/>
+    <id>http://ywrby.cn/2021/11/17/18-%E4%BF%A1%E5%8F%B7%E9%87%8F%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%88%E5%90%B8%E7%83%9F%E8%80%85%EF%BC%8C%E8%AF%BB%E8%80%85-%E5%86%99%E8%80%85%E7%AD%89%EF%BC%89/</id>
     <published>2021-11-17T12:08:38.000Z</published>
     <updated>2021-11-17T13:18:09.143Z</updated>
     
@@ -246,14 +246,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>区块链网络中矿池选择的演化博弈</title>
-    <link href="http://ywrby.com/2021/11/14/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9F%BF%E6%B1%A0%E9%80%89%E6%8B%A9%E7%9A%84%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/"/>
-    <id>http://ywrby.com/2021/11/14/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9F%BF%E6%B1%A0%E9%80%89%E6%8B%A9%E7%9A%84%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/</id>
+    <link href="http://ywrby.cn/2021/11/14/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9F%BF%E6%B1%A0%E9%80%89%E6%8B%A9%E7%9A%84%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/"/>
+    <id>http://ywrby.cn/2021/11/14/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9F%BF%E6%B1%A0%E9%80%89%E6%8B%A9%E7%9A%84%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/</id>
     <published>2021-11-14T12:53:03.000Z</published>
     <updated>2021-12-08T07:43:29.298Z</updated>
     
@@ -268,16 +268,16 @@
     
     
     
-    <category term="区块链" scheme="http://ywrby.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    <category term="区块链" scheme="http://ywrby.cn/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
-    <category term="演化博弈" scheme="http://ywrby.com/tags/%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/"/>
+    <category term="演化博弈" scheme="http://ywrby.cn/tags/%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/"/>
     
   </entry>
   
   <entry>
     <title>17-生产者与消费者问题</title>
-    <link href="http://ywrby.com/2021/11/12/17-%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98/"/>
-    <id>http://ywrby.com/2021/11/12/17-%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98/</id>
+    <link href="http://ywrby.cn/2021/11/12/17-%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98/"/>
+    <id>http://ywrby.cn/2021/11/12/17-%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98/</id>
     <published>2021-11-12T07:29:27.000Z</published>
     <updated>2021-11-14T12:23:31.811Z</updated>
     
@@ -292,14 +292,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>16-用信号量实现进程互斥,同步,前驱关系</title>
-    <link href="http://ywrby.com/2021/11/12/16-%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5-%E5%90%8C%E6%AD%A5-%E5%89%8D%E9%A9%B1%E5%85%B3%E7%B3%BB/"/>
-    <id>http://ywrby.com/2021/11/12/16-%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5-%E5%90%8C%E6%AD%A5-%E5%89%8D%E9%A9%B1%E5%85%B3%E7%B3%BB/</id>
+    <link href="http://ywrby.cn/2021/11/12/16-%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5-%E5%90%8C%E6%AD%A5-%E5%89%8D%E9%A9%B1%E5%85%B3%E7%B3%BB/"/>
+    <id>http://ywrby.cn/2021/11/12/16-%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5-%E5%90%8C%E6%AD%A5-%E5%89%8D%E9%A9%B1%E5%85%B3%E7%B3%BB/</id>
     <published>2021-11-12T02:14:33.000Z</published>
     <updated>2021-11-12T02:54:24.465Z</updated>
     
@@ -314,14 +314,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>15-信号量机制</title>
-    <link href="http://ywrby.com/2021/11/08/15-%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6/"/>
-    <id>http://ywrby.com/2021/11/08/15-%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6/</id>
+    <link href="http://ywrby.cn/2021/11/08/15-%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6/"/>
+    <id>http://ywrby.cn/2021/11/08/15-%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6/</id>
     <published>2021-11-08T12:33:49.000Z</published>
     <updated>2021-11-08T13:38:16.881Z</updated>
     
@@ -338,14 +338,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>1-归并排序-算法复习</title>
-    <link href="http://ywrby.com/2021/11/07/1-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/"/>
-    <id>http://ywrby.com/2021/11/07/1-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/</id>
+    <link href="http://ywrby.cn/2021/11/07/1-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/"/>
+    <id>http://ywrby.cn/2021/11/07/1-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/</id>
     <published>2021-11-07T10:40:55.000Z</published>
     <updated>2021-11-08T06:58:01.571Z</updated>
     
@@ -360,14 +360,14 @@
     
     
     
-    <category term="算法" scheme="http://ywrby.com/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="http://ywrby.cn/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>14-进程同步与进程互斥</title>
-    <link href="http://ywrby.com/2021/11/07/14-%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5/"/>
-    <id>http://ywrby.com/2021/11/07/14-%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5/</id>
+    <link href="http://ywrby.cn/2021/11/07/14-%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5/"/>
+    <id>http://ywrby.cn/2021/11/07/14-%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5/</id>
     <published>2021-11-07T07:31:02.000Z</published>
     <updated>2021-11-08T12:33:31.199Z</updated>
     
@@ -384,14 +384,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>13-常见调度算法</title>
-    <link href="http://ywrby.com/2021/11/06/13-%E5%B8%B8%E8%A7%81%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/"/>
-    <id>http://ywrby.com/2021/11/06/13-%E5%B8%B8%E8%A7%81%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/</id>
+    <link href="http://ywrby.cn/2021/11/06/13-%E5%B8%B8%E8%A7%81%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/"/>
+    <id>http://ywrby.cn/2021/11/06/13-%E5%B8%B8%E8%A7%81%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/</id>
     <published>2021-11-06T01:12:12.000Z</published>
     <updated>2021-11-06T10:50:34.938Z</updated>
     
@@ -406,14 +406,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>12-调度算法的评价指标</title>
-    <link href="http://ywrby.com/2021/11/05/12-%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/"/>
-    <id>http://ywrby.com/2021/11/05/12-%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</id>
+    <link href="http://ywrby.cn/2021/11/05/12-%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/"/>
+    <id>http://ywrby.cn/2021/11/05/12-%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</id>
     <published>2021-11-05T13:00:57.000Z</published>
     <updated>2021-11-05T13:21:42.956Z</updated>
     
@@ -428,14 +428,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>11-进程调度的时机，方式，切换与过程</title>
-    <link href="http://ywrby.com/2021/11/05/11-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%EF%BC%8C%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%87%E7%A8%8B/"/>
-    <id>http://ywrby.com/2021/11/05/11-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%EF%BC%8C%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%87%E7%A8%8B/</id>
+    <link href="http://ywrby.cn/2021/11/05/11-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%EF%BC%8C%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%87%E7%A8%8B/"/>
+    <id>http://ywrby.cn/2021/11/05/11-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%EF%BC%8C%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%87%E7%A8%8B/</id>
     <published>2021-11-05T12:18:57.000Z</published>
     <updated>2021-11-05T13:00:35.613Z</updated>
     
@@ -451,14 +451,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>10-处理机调度的概念与层次</title>
-    <link href="http://ywrby.com/2021/11/05/10-%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%B1%82%E6%AC%A1/"/>
-    <id>http://ywrby.com/2021/11/05/10-%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%B1%82%E6%AC%A1/</id>
+    <link href="http://ywrby.cn/2021/11/05/10-%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%B1%82%E6%AC%A1/"/>
+    <id>http://ywrby.cn/2021/11/05/10-%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%B1%82%E6%AC%A1/</id>
     <published>2021-11-05T11:44:38.000Z</published>
     <updated>2021-11-05T12:17:56.115Z</updated>
     
@@ -473,7 +473,7 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
