@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Ywrby个人博客网站</title>
+  <title>Ywrby Blog</title>
   
-  <subtitle>less is more</subtitle>
-  <link href="http://ywrby.cn/atom.xml" rel="self"/>
+  <subtitle>Less is more</subtitle>
+  <link href="http://ywrby.com/atom.xml" rel="self"/>
   
-  <link href="http://ywrby.cn/"/>
-  <updated>2022-10-03T04:18:16.619Z</updated>
-  <id>http://ywrby.cn/</id>
+  <link href="http://ywrby.com/"/>
+  <updated>2023-05-26T22:25:02.223Z</updated>
+  <id>http://ywrby.com/</id>
   
   <author>
     <name>Ywrby</name>
@@ -17,9 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>集乐-统一多媒体文件资源管理器</title>
+    <link href="http://ywrby.com/2023/05/27/%E9%9B%86%E4%B9%90-%E7%BB%9F%E4%B8%80%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8/"/>
+    <id>http://ywrby.com/2023/05/27/%E9%9B%86%E4%B9%90-%E7%BB%9F%E4%B8%80%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8/</id>
+    <published>2023-05-26T22:24:05.000Z</published>
+    <updated>2023-05-26T22:25:02.223Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>随着互联网的发展与短视频等流媒体展示分享方式的普及，如何同时进行多种多媒体文件资源的管理与分类逐渐成为困扰人们进行文件管理的主要问题。本项目为解决上述问题，设计了一款多媒体集成管理器，采用前后端分离的方式，使用 Electron 和 Vue.js 作为前端框架，Springboot 作为后端框架。项目主要模块分为电子书管理模块，图片管理模块以及影视资源管理模块。项目基本功能主要有：文件元数据编辑，文件标签操作，文件夹同步，高级文件搜索，本地文件操作，瀑布流展示，文件分享，应用内预览，页面自动截图，拟物播放器等。最后对系统进行了综合测试与结果分析，结果表明：项目交互性良好，兼容性高，实现了目标功能。具有实际应用意义。</p><h1 id="系统详细设计"><a href="#系统详细设计" class="headerlink" title="系统详细设计"></a>系统详细设计</h1><p>通过对项目整体进行可行性分析与需求分析，项目设计的基本方向和功能内容相对明确，项目以普通用户为设计视角，详细介绍对应功能与界面的设计和实现。</p><h2 id="系统总体架构设计"><a href="#系统总体架构设计" class="headerlink" title="系统总体架构设计"></a>系统总体架构设计</h2><p>项目总体架构设计采用前后端分离的设计模式，前端使用 Electron 和 Vue.js 作为前端开发框架，同时使用 Node.js 中的 Axios 作为网络通信库与后端通过 Http 请求进行数据通信和功能通信。后端使用 Spring boot 作为开发框架，利用 MyBatis 与 MySQL 数据库进行数据传输。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230526223546.png"></p><h2 id="系统数据库设计"><a href="#系统数据库设计" class="headerlink" title="系统数据库设计"></a>系统数据库设计</h2><p>项目内共使用 14 张数据表，表间关系通过外键相连接，下图为项目 E-R 图</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230526223732.png"></p><h3 id="数据库表设计"><a href="#数据库表设计" class="headerlink" title="数据库表设计"></a>数据库表设计</h3><p>数据表主要分为三大类，与影视资源相关数据表（vc_info,video_info,video_tag 等）与电子书资源相关数据表（ec_info,ebook_info,ebook_tag,ebook_author 等），与图片资源相关数据表（ic_info,image_info,image_tag 等）。下面以相对全面的影视资源数据表为例介绍项目建表原则。</p><center><p>表 4.1 影视合集数据表</p></center><table><thead><tr><th>字段</th><th>数据类型</th><th>说明</th></tr></thead><tbody><tr><td>ID(主键)</td><td>INT</td><td>影视合集数据表主键，唯一标识符，自增</td></tr><tr><td>VC_NAME</td><td>VARCHAR</td><td>影视合集名称</td></tr><tr><td>VC_PATH</td><td>VARCHAR</td><td>影视合集所在文件夹路径</td></tr><tr><td>VC_DESC</td><td>VARCHAR</td><td>影视合集简介</td></tr><tr><td>VC_COVER</td><td>VARCHAR</td><td>影视合集封面（缓存）</td></tr></tbody></table><center><p>表4.2 视频资源数据表</p></center><table><thead><tr><th>字段</th><th>数据类型</th><th>说明</th></tr></thead><tbody><tr><td>VC_ID</td><td>INT</td><td>视频资源所属影视合集 ID，外键</td></tr><tr><td>videoID</td><td>INT</td><td>视频资源主键，视频资源唯一标识符，自增</td></tr><tr><td>videoName</td><td>VARCHAR</td><td>视频资源名称，即用于辨识也用于标识路径</td></tr><tr><td>videoCover</td><td>VARCHAR</td><td>视频资源封面（缓存）</td></tr><tr><td>videoScore</td><td>TINYINT</td><td>0-5 数字，用于表示用户对视频的评分</td></tr><tr><td>Followed</td><td>TINYINT</td><td>0 或 1 数字，用于表示用户是否关注该视频</td></tr><tr><td>Intro</td><td>VARCHAR</td><td>视频资源简介</td></tr><tr><td>releaseDate</td><td>DATETIME</td><td>视频资源发布日期</td></tr><tr><td>url</td><td>VARCHAR</td><td>视频资源相关网址链接</td></tr></tbody></table><h2 id="项目前端界面功能设计"><a href="#项目前端界面功能设计" class="headerlink" title="项目前端界面功能设计"></a>项目前端界面功能设计</h2><p>整个项目中，界面展示部分作为用户最直接接触以及感知的部分，对用户的第一使用体验以及软件综合感受起着决定性作用。在界面设计过程中应严格以用户使用体验为第一要义，同时保证软件使用过程中的功能完善以及呈现效果等方面。</p><h3 id="综合展示模块界面设计"><a href="#综合展示模块界面设计" class="headerlink" title="综合展示模块界面设计"></a>综合展示模块界面设计</h3><p>综合展示模块负责统计并展示不同类型资源合集相关情况以及进行随机的相关资源推荐，主要分为书库综合展示，图集综合展示以及影集综合展示部分。该模块是用户在进入软件后首先要体验到的部分，也是最高层面上管理整个多媒体资源集成管理器系统内文件的模块。</p><p>该部分流程主要为用户进入系统后点击进入指定类型文件综合管理模块内部，展示界面分别对随机推荐的相关类型文件进行展示，同时对该类型下所有合集内容进行展示，展示内容包括合集名称，合集封面以及合集基本简介等。</p><p>用户右键点击指定合集卡片，弹出扩展操作选项，主要分为打开书库详情界面，编辑书库元数据，删除指定书库，在文件夹内按路径打开指定书库。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230526224421.png"></p><p>在该过程中文件夹默认打开指定合集路径涉及到对系统进行直接操作，其主要操作流程见下图。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230526224452.png"></p><h3 id="书库展示界面设计"><a href="#书库展示界面设计" class="headerlink" title="书库展示界面设计"></a>书库展示界面设计</h3><p>在设计书库展示界面时，应考虑到用户的实际体验，一方面要兼顾图书信息的全面展示，另一方面应尽可能简化用户操作降低用户学习成本。综上，主要应综合保证以下内容：</p><ol><li>界面布局：应该采用简洁明了的布局方式，使得用户可以快速浏览和选择电子书，可以使用网格布局、列表布局等方式来展示电子书。</li><li>电子书信息：应该展示电子书的基本信息，如书名、作者、出版社、出版时间、简介等，方便用户了解电子书的基本情况。</li><li>封面展示：应该展示电子书的封面图片，以吸引用户的眼球，同时方便用户快速识别电子书。</li><li>排序和筛选：应该提供排序和筛选功能，方便用户按照自己的需求进行电子书的选择和浏览。</li><li>评分和评论：应该提供用户评分和评论的功能，方便用户了解其他用户的评价和意见，同时也可以为其他用户提供参考。</li><li>搜索功能：应该提供搜索功能，方便用户快速查找自己需要的电子书，提高用户的使用效率。</li><li>标签功能，每个资源身上可以打上一系列“标签”, 以表明这个资源的属性, 对其进行分类。“标签”具有层次性, 是资源类别的一个体现[5]。<br>总的来说，一个好的电子书合集界面应该简洁明了、易于使用、能够满足用户的需求，并且提供优秀的用户体验。</li></ol><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230526224553.png"></p><p>在进行高级搜索过程中，主要流程是在搜索界面首先进行搜索类型的类型选择，确定是按照书名，作者，出版商还是其他内容进行搜索。确定好搜索类型后，进行搜索内容的输入，前端在接收到搜索内容后对搜索内容进行切分，随后将相关数据传输到后端进行模糊查询，前端向后端发送请求过程中需要调用 Node.js 下的 Axios 库进行网络通信，Axios 是一款易用、简洁且高效的 http 库，是一个可以用在浏览器和 Node.js 中的异步通信框架，其主要作用就是实现 Ajax 异步通信，由于 Vue 只关注视图层内容，使用 Axios 更为便捷。使用 Axios 控制网络通信过程具有以下特点：（1）从浏览器中创建 XMLHttpRequests，（2）从 node.js 创建 http 请求，（3）支持 Promise API（在 JS 中进行链式编程），（4）拦截请求和相应，（5）转换请求数据和响应数据，（6）取消请求，（7）自动转换 JSON 数据，（8）客户端支持防御 XSRF。整个高级搜索流程如下图所示</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230526224615.png"></p><h3 id="图集展示界面"><a href="#图集展示界面" class="headerlink" title="图集展示界面"></a>图集展示界面</h3><p>图集展示界面需要同时对用户的大量图片进行展示，以瀑布流形式进行整个内容的展示相对更加合理，在该过程中需要注意到：</p><ol><li>图片尺寸和比例：瀑布流展示图片的界面中，图片的尺寸和比例是非常重要的。应该确保每一张图片都能够清晰地展示，同时不影响用户体验。</li><li>瀑布流布局：瀑布流布局的设计应该考虑到用户的浏览习惯，让用户能够轻松浏览大量图片，同时不会感到拥挤或混乱。布局应该简洁明了，突出重点。</li><li>加载速度和响应速度：瀑布流展示图片需要大量的图片数据，因此加载速度和响应速度非常重要。应该采用高效的代码和缓存机制，确保界面能够快速加载和响应用户的操作。</li><li>用户交互：瀑布流展示图片的界面中，用户交互是非常重要的。应该设计简单、直观的交互方式，让用户能够快速地浏览、筛选和返回上一页/页码等操作。</li><li>颜色和字体：颜色和字体的设计应该考虑到整个界面的协调性和可读性。应该采用明亮、清晰的颜色和字体，确保用户能够轻松识别信息和进行操作。</li><li>可访问性：瀑布流展示图片的界面应该考虑到可访问性，确保所有功能和信息都能够方便地访问和使用。应该采用易于理解和使用的导航和搜索功能，同时考虑到视力和听力有障碍的用户使用。</li></ol><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230526224721.png"></p><p>在实现瀑布流的过程中，步骤主要分为：</p><ol><li>初始化数据：首先需要从后端或缓存中获取瀑布流所需的图片数据，并将其存储在本地或缓存中。</li><li>设置瀑布流容器：创建瀑布流容器，通常使用 HTML 元素，例如<code>&lt;div&gt;</code>或<code>&lt;canvas&gt;</code>。</li><li>设置瀑布流布局：根据所需的瀑布流布局，例如流式布局或分块布局，使用 CSS 设置瀑布流容器的样式。</li><li>加载图片：使用 JavaScript 异步加载图片，并将其添加到瀑布流容器中。可以使用 HTML5 的<code>&lt;img&gt;</code>标签或 Canvas 元素加载图片。</li><li>设置瀑布流事件：设置事件监听器，例如点击事件或滚动事件，以便用户可以与瀑布流交互，对瀑布流布局大小进行调整。</li><li>更新瀑布流：当图片数据更新或用户交互时，需要更新瀑布流的布局和样式。</li><li>缓存图片：由于需要同时加载大量图片，提前对图片进行缓存可以大大减少系统加载实践，提高用户使用体验。</li><li>优化性能：为了提高瀑布流的性能和用户体验，可以使用图片懒加载等设计，避免过多图片同时加载造成系统崩溃。</li></ol><p>在进行主色调分析过程中，需要从后端进行图片的加载以及主色调分析，具体流程如下图所示。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230526224839.png"></p><h3 id="影集展示界面"><a href="#影集展示界面" class="headerlink" title="影集展示界面"></a>影集展示界面</h3><p>在设计影视资源展示界面的过程中，首先应该注意的是如何设计一个用户友好的交互界面，让用户可以轻松地浏览、搜索、播放视频。在交互设计中，需要考虑用户的使用习惯、心理需求等因素，以提高用户体验。综合用户日常使用视频网站的行为习惯与可能性，将影视资源的展示界面向主流视频媒体网站设计是一个相对正确可行的方向。</p><p>一方面，以封面图作为每个视频资源展示的核心内容，占据展示界面的主要位置，另一方面，完善的功能栏在下方作为辅助工具，帮助用户在使用过程中可以便捷的对指定视频资源进行高效的控制编辑等操作。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230526224913.png"></p><p>封面作为视频资源的重要展示因素，可以很大程度上说明视频的主要内容，部分视频网站采用用户上传封面的形式进行封面展示，这种方式能够准确的由用户控制封面展示内容但相对繁琐，本地系统一般会随机生成视频封面，十分便捷却容易出现封面混乱等问题，项目设计过程中支持用户自行上传或是随机生成封面，最大程度上满足用户核心需求，而随机生成封面的过程中涉及到对视频核心数据的获取与随机帧数的生成，大致流程如图所示。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230526224937.png"></p><p>除此以外，对于影视资源而言最重要的就是如何在应用内进行信息和流媒体内容的展示和播放，普通形式的播放器无论从使用便利性角度还是趣味性角度而言都相对薄弱，所以在设计播放器形式过程中项目引入拟物设计的形式，拟物设计可以让用户更好地理解和使用网页。它模拟了现实世界中的物品和操作方式，让用户更容易上手，从而提高用户满意度。同时拟物设计可以让网页看起来更加真实，用户可以更自然地操作和感知网页的内容和功能。这种设计方式能够提高用户的体验和忠诚度吗。另外拟物设计可以让用户感觉更受信任，因为它模拟了现实世界中的操作方式。这种设计方式可以增加用户的信任感。</p><p>综上所述，项目对播放器进行了拟物设计。以 Nintendo Switch（任天堂公司生产的掌上游戏机）为原型，进行视频播放器的设计。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230526225011.png"></p><h2 id="项目后端功能设计"><a href="#项目后端功能设计" class="headerlink" title="项目后端功能设计"></a>项目后端功能设计</h2><p>项目后端使用 SpringBoot 作为后端开发框架，使用 MyBatis 作为持久层开发框架，严格遵守 MVC 三层结构的设计过程。控制器层作为应用程序中用于处理用户输入和控制应用程序流程的部分，负责接收用户输入，调用模型层进行数据处理，并将处理结果传递给视图层进行显示。视图层作为应用程序中用于呈现用户界面的部分，负责将模型层中的数据呈现给用户。模型层则是应用程序中用于处理业务逻辑和数据处理的部分，负责处理数据的存储、检索、更新等操作。<br>在开发过程中，后端主要处理业务逻辑以及实际功能实现，并对外提供接口供前端调用。</p><p>这个过程中就包括，设计数据库结构和建立数据表，根据业务需求，设计并建立相应的数据表，用于存储多媒体资源的相关信息，例如视频、图片、电子书的名称、路径、大小、上传时间等。实现数据访问层，利用 Mybatis 框架实现数据访问层以进行对数据库的相关操作，包括定义数据访问接口和实现数据访问接口，用于对数据库进行增删改查等操作。实现业务逻辑层，在控制器层和数据访问层之间实现业务逻辑层，用于处理业务逻辑，例如主色调分析、分页处理等。实现控制器层，使用 Springboot 框架实现控制器层，处理前端的请求，调用业务逻辑层和数据访问层，返回处理结果给前端。编写测试用例：编写测试用例，对后端代码进行单元测试和集成测试，确保代码的正确性和可靠性。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527060848.png"></p><h1 id="系统具体实现"><a href="#系统具体实现" class="headerlink" title="系统具体实现"></a>系统具体实现</h1><h2 id="全部书库展示界面"><a href="#全部书库展示界面" class="headerlink" title="全部书库展示界面"></a>全部书库展示界面</h2><p>在设计全部书库的展示界面时，一方面要重视界面的美观与简洁，另一方面也要保证用户的功能体验充足且高效，所以全部书库界面设计从第一视角分为两个主要部分。</p><p>界面上方为随机推荐部分，会从数据库随机读取指定数目的电子书数据，以其封面生成走马灯，用户可以通过点击走马灯上的图片使用默认方式打开电子书文件。</p><p>界面下部分为各个书库展示界面，每个展示卡片左半部分为书库封面，右半部分则为书库的名称与简介，单击书库卡片则会跳转对应书库界面，右键则会弹出响应补充功能按钮：打开书库，编辑书库，删除书库，以及打开书库所在文件夹。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527060944.png"></p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527060956.png"></p><h2 id="书库展示界面"><a href="#书库展示界面" class="headerlink" title="书库展示界面"></a>书库展示界面</h2><p>界面最上方展示功能栏，功能栏第一项为上传书籍按钮，点击后调用系统文件管理器进行电子书文件选择并上传，第二项为刷新与同步按钮，点击后对本地电子书库进行数据同步，并刷新数据库，第三项为多功能搜索栏，用户可以根据指定搜索条件进行书籍的搜索。</p><p>功能栏下方为电子书展示与选择界面，用户可以查看所有电子书基本信息（书名，作者，出版商，评分，语言，出版日期，书号，页数，类型，标签等），并且可以根据指定栏目进行数据的排序展示。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527061023.png"></p><p>界面右部分为电子书详细信息展示界面，最上方展示电子书封面，右键电子书封面部分，弹出补充功能栏，主要有默认方式打开，书籍元数据编辑，移除书籍，文件夹打开以及豆瓣搜索指定书籍。封面下方展示书籍详细信息，最下方为对应功能按钮：编辑元数据信息，默认方式打开电子书以及移除电子书。</p><p>拖拽上传是一种非常简单的文件上传方式，不需要进行复杂的选择或点击操作，只需要在文件管理器中拖拽文件或文件夹到上传窗口即可。这种方式能够节省用户的时间，提高上传效率。支持多文件上传，用户可以将多个文件或文件夹拖拽到上传窗口中，然后一次性上传它们。这种方式能够帮助用户快速上传大量文件，节省时间和精力。项目重新实现了全局拖拽上传方式，具体核心代码见附录 1-核心代码 1：拖拽上传图书（前端）。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527061053.png"></p><h2 id="书籍元数据编辑界面"><a href="#书籍元数据编辑界面" class="headerlink" title="书籍元数据编辑界面"></a>书籍元数据编辑界面</h2><p>编辑书籍元数据界面，在用户点击功能键后弹出，界面左半部分以展示封面图为主，最上方展示封面图，图片下方是切换封面图按钮，点击后调出系统文件选择器进行图片选择并缓存后设置为封面，最下方是切换收藏状态按钮。界面右部分是编辑书籍元数据表单，按照书籍内数据特性分配表单选项情况。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527061118.png"></p><h2 id="全部图集界面"><a href="#全部图集界面" class="headerlink" title="全部图集界面"></a>全部图集界面</h2><p>全部图集界面基本与全部书库界面保持一致，上方从数据库随机选择进行随机图片资源推荐，下方以栅栏式进行书库卡片的设计，自适应界面大小变化，其余功能键也与全部书库界面基本保持一致。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527061147.png"></p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527061156.png"></p><h2 id="图集展示界面-1"><a href="#图集展示界面-1" class="headerlink" title="图集展示界面"></a>图集展示界面</h2><p>图集展示界面采用瀑布流式布局进行展示，一方面瀑布流布局可以使页面看起来更加美观，具有视觉冲击力。图片、文字、视频等元素可以根据不同的尺寸、比例进行排列，使得整个页面呈现出错落有致的感觉，给人以美感。另一方面瀑布流布局可以让用户轻松地快速浏览大量内容，不需要像传统布局方式一样翻页或者滚动到底部查看更多内容，用户可以浏览更多的内容，提高了用户的使用体验。同时，瀑布流布局可以节约页面空间，因为它可以让网页上的元素紧凑地排列，使得页面可以呈现更多内容，同时使得页面不显得过于拥挤。最重要的是瀑布流布局可以适应不同屏幕尺寸，因为它可以根据屏幕宽度自动调整元素的排列方式，从而使得页面可以在不同的设备上呈现出最佳的布局效果。</p><p>项目中重写了整个瀑布流的实现逻辑，保证了完整实现后的瀑布流更加适应桌面化应用开发与使用，同时为瀑布流增加了除自适应宽度外的手动调节栅栏宽度大小功能，用户可以通过功能键或者快捷键（CTRL+鼠标滚轮上滑/下滑）进行页面中瀑布流栅栏宽度的自定义。</p><p>界面上方为图集展示界面分页部分与功能区，主要包括返回按钮与瀑布流宽度调节按钮以及同步功能键和文件上传功能键。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527061241.png"></p><h2 id="图集元数据编辑界面"><a href="#图集元数据编辑界面" class="headerlink" title="图集元数据编辑界面"></a>图集元数据编辑界面</h2><p>在图集展示界面单击图片会展开图片资源展示与编辑界面栏，界面最上方是图片资源预览缓存图，图片下方展示图片的五个主色调色块，单击或右键可以选择复制色块的 RGB 值或 16 进制值。随后的是收藏状态切换栏，之后是图片信息编辑栏，支持用户编辑图片的相关网址链接，图片基本信息或简介，以及图片的标签内容。最下方是图片基本信息内容，会调用系统指令分析图片的分辨率，类型以及创建日期等基本信息。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527061307.png"></p><h2 id="图片详情界面"><a href="#图片详情界面" class="headerlink" title="图片详情界面"></a>图片详情界面</h2><p>点击图片下方链接或者右键进入详情，即可进入图片详情界面，页面分为左右两个卡片界面，左半部分卡片主要进行图片内容的展示，点击缓存图片可以唤起预览窗口，在应用内预览图片情况，下方进行图片主色调分析，将图片的五个主色调以色块的形式进行展示。最下方对应两个主要功能键，页面截图和文件夹内打开。</p><p>页面右半部分则是功能键与基本信息展示卡片，最上方三个按钮分别支持用户将图片分享至 QQ 空间与微信或是复制文件路径，下方展示了图片的评分，相关链接，图片信息备注，标签，创建日期以及分辨率和图片类型等基本信息。最后一部分则是默认方式打开图片以及收藏状态切换按钮。</p><p>为了方便用户在使用过程中将软件内图片或使用情况分享给其他用户，项目重写了页面截图功能方法</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527061346.png"></p><h2 id="全部影集界面"><a href="#全部影集界面" class="headerlink" title="全部影集界面"></a>全部影集界面</h2><p>全部影集界面设计方案与前面两部分（全部书库，全部图集）异曲同工，上半部分进行影视的随机推荐，点击后唤起默认视频播放器进行播放。页面下半部分以栅栏式进行书库卡片的设计，自适应界面大小变化，其余功能键也与全部书库界面基本保持一致。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527061418.png"></p><h2 id="影集展示界面-1"><a href="#影集展示界面-1" class="headerlink" title="影集展示界面"></a>影集展示界面</h2><p>影集展示界面主要参考主流视频网站设计方式，以分立格式对视频资源进行管理，上方提供视频上传功能按钮以及本地文件同步功能。</p><p>下方逐个展示视频资源，展示栏大小同样使用栅栏式设计，随页面大小变化进行动态变化，每个视频展示栏上方展示封面，封面支持自动生成或主动上传，下方展示视频评分，名称以及功能键栏，用户可以通过功能栏，修改视频基本信息，默认方式打开，文件夹内打开或是删除指定视频。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527061449.png"></p><h2 id="视频元数据编辑界面"><a href="#视频元数据编辑界面" class="headerlink" title="视频元数据编辑界面"></a>视频元数据编辑界面</h2><p>编辑视频基本信息界面，左半部分为视频封面以及收藏状态修改按钮，用户可以通过在此处修改视频封面，右半部分为视频基本信息编辑表单，按照每个栏目相关属性对表单进行优化，方便用户快捷修改，提高用户使用体验。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527061527.png"></p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527061537.png"></p><h2 id="视频详情展示界面"><a href="#视频详情展示界面" class="headerlink" title="视频详情展示界面"></a>视频详情展示界面</h2><p>影视详情界面，最上方展示视频名称，下方以标签形式展示视频相关 tag，随后是视频基本信息卡片，分栏形式展示视频的简介，导演，编剧，演员等相关人员，上映日期，相应链接，以及帧长，时长，声道等细节信息，最下方是默认播放按钮以及收藏状态切换栏。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527061606.png"></p><p>最下方重写了原生视频播放器，对视频播放器进行拟物设计，并实现相应功能键。实现了对视频的播放/暂停切换，音量调节，进度调节，页面截图，视频搜做，静音，重置播放器，全屏切换，返回等功能。</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/20230527061624.png"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;随着互联网的发展与短视频等流媒体展示分享方式的普及，如何同时进行多种多媒体文件资源的管理与分类逐渐成为困扰人们进行文件管理的主要问题。本项目</summary>
+      
+    
+    
+    
+    
+    <category term="Electron" scheme="http://ywrby.com/tags/Electron/"/>
+    
+    <category term="Java" scheme="http://ywrby.com/tags/Java/"/>
+    
+    <category term="JavaWeb" scheme="http://ywrby.com/tags/JavaWeb/"/>
+    
+    <category term="Vue" scheme="http://ywrby.com/tags/Vue/"/>
+    
+    <category term="集乐" scheme="http://ywrby.com/tags/%E9%9B%86%E4%B9%90/"/>
+    
+    <category term="开发记录" scheme="http://ywrby.com/tags/%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>集乐-统一多媒体文件资源管理器-开发记录</title>
-    <link href="http://ywrby.cn/2022/10/03/%E9%9B%86%E4%B9%90-%E7%BB%9F%E4%B8%80%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/"/>
-    <id>http://ywrby.cn/2022/10/03/%E9%9B%86%E4%B9%90-%E7%BB%9F%E4%B8%80%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://ywrby.com/2022/10/03/%E9%9B%86%E4%B9%90-%E7%BB%9F%E4%B8%80%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/"/>
+    <id>http://ywrby.com/2022/10/03/%E9%9B%86%E4%B9%90-%E7%BB%9F%E4%B8%80%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</id>
     <published>2022-10-03T14:18:40.000Z</published>
     <updated>2022-10-03T04:18:16.619Z</updated>
     
@@ -34,24 +66,24 @@
     
     
     
-    <category term="Electron" scheme="http://ywrby.cn/tags/Electron/"/>
+    <category term="Electron" scheme="http://ywrby.com/tags/Electron/"/>
     
-    <category term="Java" scheme="http://ywrby.cn/tags/Java/"/>
+    <category term="Java" scheme="http://ywrby.com/tags/Java/"/>
     
-    <category term="JavaWeb" scheme="http://ywrby.cn/tags/JavaWeb/"/>
+    <category term="JavaWeb" scheme="http://ywrby.com/tags/JavaWeb/"/>
     
-    <category term="Vue" scheme="http://ywrby.cn/tags/Vue/"/>
+    <category term="Vue" scheme="http://ywrby.com/tags/Vue/"/>
     
-    <category term="集乐" scheme="http://ywrby.cn/tags/%E9%9B%86%E4%B9%90/"/>
+    <category term="集乐" scheme="http://ywrby.com/tags/%E9%9B%86%E4%B9%90/"/>
     
-    <category term="开发记录" scheme="http://ywrby.cn/tags/%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/"/>
+    <category term="开发记录" scheme="http://ywrby.com/tags/%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>IndexedDB浏览器数据库基本概念</title>
-    <link href="http://ywrby.cn/2022/01/24/IndexedDB%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
-    <id>http://ywrby.cn/2022/01/24/IndexedDB%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</id>
+    <link href="http://ywrby.com/2022/01/24/IndexedDB%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
+    <id>http://ywrby.com/2022/01/24/IndexedDB%E6%B5%8F%E8%A7%88%E5%99%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</id>
     <published>2022-01-24T09:15:29.000Z</published>
     <updated>2022-10-03T03:44:48.363Z</updated>
     
@@ -67,14 +99,14 @@
     
     
     
-    <category term="IndexedDB" scheme="http://ywrby.cn/tags/IndexedDB/"/>
+    <category term="IndexedDB" scheme="http://ywrby.com/tags/IndexedDB/"/>
     
   </entry>
   
   <entry>
     <title>25-两级页表</title>
-    <link href="http://ywrby.cn/2021/12/29/25-%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8/"/>
-    <id>http://ywrby.cn/2021/12/29/25-%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8/</id>
+    <link href="http://ywrby.com/2021/12/29/25-%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8/"/>
+    <id>http://ywrby.com/2021/12/29/25-%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8/</id>
     <published>2021-12-29T10:16:26.000Z</published>
     <updated>2022-01-03T07:52:33.680Z</updated>
     
@@ -89,14 +121,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>24-基本分页存储管理</title>
-    <link href="http://ywrby.cn/2021/12/27/24-%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/"/>
-    <id>http://ywrby.cn/2021/12/27/24-%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/</id>
+    <link href="http://ywrby.com/2021/12/27/24-%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/"/>
+    <id>http://ywrby.com/2021/12/27/24-%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/</id>
     <published>2021-12-27T12:13:32.000Z</published>
     <updated>2021-12-29T10:29:40.716Z</updated>
     
@@ -111,14 +143,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>23-内存空间的分配与回收</title>
-    <link href="http://ywrby.cn/2021/12/25/23-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6/"/>
-    <id>http://ywrby.cn/2021/12/25/23-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6/</id>
+    <link href="http://ywrby.com/2021/12/25/23-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6/"/>
+    <id>http://ywrby.com/2021/12/25/23-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%8E%E5%9B%9E%E6%94%B6/</id>
     <published>2021-12-25T11:12:46.000Z</published>
     <updated>2021-12-27T12:15:50.746Z</updated>
     
@@ -135,14 +167,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>22-内存空间扩充（覆盖与交换）</title>
-    <link href="http://ywrby.cn/2021/12/25/22-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E6%89%A9%E5%85%85%EF%BC%88%E8%A6%86%E7%9B%96%E4%B8%8E%E4%BA%A4%E6%8D%A2%EF%BC%89/"/>
-    <id>http://ywrby.cn/2021/12/25/22-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E6%89%A9%E5%85%85%EF%BC%88%E8%A6%86%E7%9B%96%E4%B8%8E%E4%BA%A4%E6%8D%A2%EF%BC%89/</id>
+    <link href="http://ywrby.com/2021/12/25/22-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E6%89%A9%E5%85%85%EF%BC%88%E8%A6%86%E7%9B%96%E4%B8%8E%E4%BA%A4%E6%8D%A2%EF%BC%89/"/>
+    <id>http://ywrby.com/2021/12/25/22-%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E6%89%A9%E5%85%85%EF%BC%88%E8%A6%86%E7%9B%96%E4%B8%8E%E4%BA%A4%E6%8D%A2%EF%BC%89/</id>
     <published>2021-12-25T08:15:49.000Z</published>
     <updated>2021-12-25T08:57:12.142Z</updated>
     
@@ -157,14 +189,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>21-内存与内存管理</title>
-    <link href="http://ywrby.cn/2021/12/19/21-%E5%86%85%E5%AD%98%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
-    <id>http://ywrby.cn/2021/12/19/21-%E5%86%85%E5%AD%98%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</id>
+    <link href="http://ywrby.com/2021/12/19/21-%E5%86%85%E5%AD%98%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/"/>
+    <id>http://ywrby.com/2021/12/19/21-%E5%86%85%E5%AD%98%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</id>
     <published>2021-12-19T09:57:53.000Z</published>
     <updated>2021-12-21T13:07:26.420Z</updated>
     
@@ -180,14 +212,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>20-死锁</title>
-    <link href="http://ywrby.cn/2021/12/11/20-%E6%AD%BB%E9%94%81/"/>
-    <id>http://ywrby.cn/2021/12/11/20-%E6%AD%BB%E9%94%81/</id>
+    <link href="http://ywrby.com/2021/12/11/20-%E6%AD%BB%E9%94%81/"/>
+    <id>http://ywrby.com/2021/12/11/20-%E6%AD%BB%E9%94%81/</id>
     <published>2021-12-11T06:20:20.000Z</published>
     <updated>2021-12-19T09:57:03.669Z</updated>
     
@@ -202,14 +234,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>19-管程</title>
-    <link href="http://ywrby.cn/2021/11/28/19-%E7%AE%A1%E7%A8%8B/"/>
-    <id>http://ywrby.cn/2021/11/28/19-%E7%AE%A1%E7%A8%8B/</id>
+    <link href="http://ywrby.com/2021/11/28/19-%E7%AE%A1%E7%A8%8B/"/>
+    <id>http://ywrby.com/2021/11/28/19-%E7%AE%A1%E7%A8%8B/</id>
     <published>2021-11-28T08:39:08.000Z</published>
     <updated>2021-11-28T09:03:25.326Z</updated>
     
@@ -224,14 +256,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>18-信号量相关问题（吸烟者，读者-写者等）</title>
-    <link href="http://ywrby.cn/2021/11/17/18-%E4%BF%A1%E5%8F%B7%E9%87%8F%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%88%E5%90%B8%E7%83%9F%E8%80%85%EF%BC%8C%E8%AF%BB%E8%80%85-%E5%86%99%E8%80%85%E7%AD%89%EF%BC%89/"/>
-    <id>http://ywrby.cn/2021/11/17/18-%E4%BF%A1%E5%8F%B7%E9%87%8F%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%88%E5%90%B8%E7%83%9F%E8%80%85%EF%BC%8C%E8%AF%BB%E8%80%85-%E5%86%99%E8%80%85%E7%AD%89%EF%BC%89/</id>
+    <link href="http://ywrby.com/2021/11/17/18-%E4%BF%A1%E5%8F%B7%E9%87%8F%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%88%E5%90%B8%E7%83%9F%E8%80%85%EF%BC%8C%E8%AF%BB%E8%80%85-%E5%86%99%E8%80%85%E7%AD%89%EF%BC%89/"/>
+    <id>http://ywrby.com/2021/11/17/18-%E4%BF%A1%E5%8F%B7%E9%87%8F%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%EF%BC%88%E5%90%B8%E7%83%9F%E8%80%85%EF%BC%8C%E8%AF%BB%E8%80%85-%E5%86%99%E8%80%85%E7%AD%89%EF%BC%89/</id>
     <published>2021-11-17T12:08:38.000Z</published>
     <updated>2021-11-17T13:18:09.143Z</updated>
     
@@ -246,14 +278,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>区块链网络中矿池选择的演化博弈</title>
-    <link href="http://ywrby.cn/2021/11/14/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9F%BF%E6%B1%A0%E9%80%89%E6%8B%A9%E7%9A%84%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/"/>
-    <id>http://ywrby.cn/2021/11/14/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9F%BF%E6%B1%A0%E9%80%89%E6%8B%A9%E7%9A%84%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/</id>
+    <link href="http://ywrby.com/2021/11/14/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9F%BF%E6%B1%A0%E9%80%89%E6%8B%A9%E7%9A%84%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/"/>
+    <id>http://ywrby.com/2021/11/14/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9F%BF%E6%B1%A0%E9%80%89%E6%8B%A9%E7%9A%84%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/</id>
     <published>2021-11-14T12:53:03.000Z</published>
     <updated>2021-12-08T07:43:29.298Z</updated>
     
@@ -268,16 +300,16 @@
     
     
     
-    <category term="区块链" scheme="http://ywrby.cn/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    <category term="区块链" scheme="http://ywrby.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
-    <category term="演化博弈" scheme="http://ywrby.cn/tags/%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/"/>
+    <category term="演化博弈" scheme="http://ywrby.com/tags/%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/"/>
     
   </entry>
   
   <entry>
     <title>17-生产者与消费者问题</title>
-    <link href="http://ywrby.cn/2021/11/12/17-%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98/"/>
-    <id>http://ywrby.cn/2021/11/12/17-%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98/</id>
+    <link href="http://ywrby.com/2021/11/12/17-%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98/"/>
+    <id>http://ywrby.com/2021/11/12/17-%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E6%B6%88%E8%B4%B9%E8%80%85%E9%97%AE%E9%A2%98/</id>
     <published>2021-11-12T07:29:27.000Z</published>
     <updated>2021-11-14T12:23:31.811Z</updated>
     
@@ -292,14 +324,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>16-用信号量实现进程互斥,同步,前驱关系</title>
-    <link href="http://ywrby.cn/2021/11/12/16-%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5-%E5%90%8C%E6%AD%A5-%E5%89%8D%E9%A9%B1%E5%85%B3%E7%B3%BB/"/>
-    <id>http://ywrby.cn/2021/11/12/16-%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5-%E5%90%8C%E6%AD%A5-%E5%89%8D%E9%A9%B1%E5%85%B3%E7%B3%BB/</id>
+    <link href="http://ywrby.com/2021/11/12/16-%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5-%E5%90%8C%E6%AD%A5-%E5%89%8D%E9%A9%B1%E5%85%B3%E7%B3%BB/"/>
+    <id>http://ywrby.com/2021/11/12/16-%E7%94%A8%E4%BF%A1%E5%8F%B7%E9%87%8F%E5%AE%9E%E7%8E%B0%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5-%E5%90%8C%E6%AD%A5-%E5%89%8D%E9%A9%B1%E5%85%B3%E7%B3%BB/</id>
     <published>2021-11-12T02:14:33.000Z</published>
     <updated>2021-11-12T02:54:24.465Z</updated>
     
@@ -314,14 +346,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>15-信号量机制</title>
-    <link href="http://ywrby.cn/2021/11/08/15-%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6/"/>
-    <id>http://ywrby.cn/2021/11/08/15-%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6/</id>
+    <link href="http://ywrby.com/2021/11/08/15-%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6/"/>
+    <id>http://ywrby.com/2021/11/08/15-%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6/</id>
     <published>2021-11-08T12:33:49.000Z</published>
     <updated>2021-11-08T13:38:16.881Z</updated>
     
@@ -338,14 +370,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>1-归并排序-算法复习</title>
-    <link href="http://ywrby.cn/2021/11/07/1-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/"/>
-    <id>http://ywrby.cn/2021/11/07/1-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/</id>
+    <link href="http://ywrby.com/2021/11/07/1-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/"/>
+    <id>http://ywrby.com/2021/11/07/1-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/</id>
     <published>2021-11-07T10:40:55.000Z</published>
     <updated>2021-11-08T06:58:01.571Z</updated>
     
@@ -360,14 +392,14 @@
     
     
     
-    <category term="算法" scheme="http://ywrby.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="http://ywrby.com/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>14-进程同步与进程互斥</title>
-    <link href="http://ywrby.cn/2021/11/07/14-%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5/"/>
-    <id>http://ywrby.cn/2021/11/07/14-%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5/</id>
+    <link href="http://ywrby.com/2021/11/07/14-%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5/"/>
+    <id>http://ywrby.com/2021/11/07/14-%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%E4%B8%8E%E8%BF%9B%E7%A8%8B%E4%BA%92%E6%96%A5/</id>
     <published>2021-11-07T07:31:02.000Z</published>
     <updated>2021-11-08T12:33:31.199Z</updated>
     
@@ -384,14 +416,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>13-常见调度算法</title>
-    <link href="http://ywrby.cn/2021/11/06/13-%E5%B8%B8%E8%A7%81%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/"/>
-    <id>http://ywrby.cn/2021/11/06/13-%E5%B8%B8%E8%A7%81%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/</id>
+    <link href="http://ywrby.com/2021/11/06/13-%E5%B8%B8%E8%A7%81%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/"/>
+    <id>http://ywrby.com/2021/11/06/13-%E5%B8%B8%E8%A7%81%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/</id>
     <published>2021-11-06T01:12:12.000Z</published>
     <updated>2021-11-06T10:50:34.938Z</updated>
     
@@ -406,14 +438,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>12-调度算法的评价指标</title>
-    <link href="http://ywrby.cn/2021/11/05/12-%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/"/>
-    <id>http://ywrby.cn/2021/11/05/12-%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</id>
+    <link href="http://ywrby.com/2021/11/05/12-%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/"/>
+    <id>http://ywrby.com/2021/11/05/12-%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</id>
     <published>2021-11-05T13:00:57.000Z</published>
     <updated>2021-11-05T13:21:42.956Z</updated>
     
@@ -428,14 +460,14 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>11-进程调度的时机，方式，切换与过程</title>
-    <link href="http://ywrby.cn/2021/11/05/11-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%EF%BC%8C%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%87%E7%A8%8B/"/>
-    <id>http://ywrby.cn/2021/11/05/11-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%EF%BC%8C%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%87%E7%A8%8B/</id>
+    <link href="http://ywrby.com/2021/11/05/11-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%EF%BC%8C%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%87%E7%A8%8B/"/>
+    <id>http://ywrby.com/2021/11/05/11-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%EF%BC%8C%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%87%E7%A8%8B/</id>
     <published>2021-11-05T12:18:57.000Z</published>
     <updated>2021-11-05T13:00:35.613Z</updated>
     
@@ -451,29 +483,7 @@
     
     
     
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>10-处理机调度的概念与层次</title>
-    <link href="http://ywrby.cn/2021/11/05/10-%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%B1%82%E6%AC%A1/"/>
-    <id>http://ywrby.cn/2021/11/05/10-%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%B1%82%E6%AC%A1/</id>
-    <published>2021-11-05T11:44:38.000Z</published>
-    <updated>2021-11-05T12:17:56.115Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="调度"><a href="#调度" class="headerlink" title="调度"></a>调度</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>当有多项任务需要处理时，由于资源有限，所有任务无法同时处理，此时就需要确定某种规则来决定各项任务的执行顺序，这就是调度</p><p>在多道程序系统中，进程的数量往往多于处理机个数，这样不可能同时并行处理各个进程</p><p>处理机调度，就是从就绪队列中按照一定的算法选择一个进程并将处理机分配给该进程使用，以实现进程的并发执行</p><h2 id="调度的三个层次"><a href="#调度的三个层次" class="headerlink" title="调度的三个层次"></a>调度的三个层次</h2><h3 id="高级调度（作业调度）"><a href="#高级调度（作业调度）" class="headerlink" title="高级调度（作业调度）"></a>高级调度（作业调度）</h3><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20211105200937.png"></p><p>由于内存空间有限，有时无法将用户提交的作业全部放入内存，因此就需要确定某种规则来决定作业调入内存的顺序，即高级调度</p><p>高级调度（作业调度）。按一定的原则从外存上处于后备队列（存储所有还没有进过内存的任务）的作业中挑选一个或多个作业，给他们<strong>分配内存等必要资源，并建立相应进程（建立PCB）</strong>，以使他们获得竞争处理机的权利</p><p>高级调度是辅存(外存)与内存之间的调度。每个作业只调入一次，调出一次。<strong>作业调入时会建立相应的PCB，作业调出时才撤销PCB</strong>。高级调度主要是指调入的问题，因为只有调入的时机需要操作系统来确定，但<strong>调出的时机必然是作业运行结束才调出</strong>。（即对于每项任务，高级调度只执行一次）</p><h3 id="中级调度（内存调度）"><a href="#中级调度（内存调度）" class="headerlink" title="中级调度（内存调度）"></a>中级调度（内存调度）</h3><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20211105201522.png"></p><p>引入了虚拟存储技术之后，可将暂时不能运行的进程调至外存等待。等它重新具备了运行条件且内存又稍有空闲时，再重新调入内存。</p><p>这么做的目的是为了<strong>提高内存利用率和系统吞吐量</strong>。</p><p>暂时调到外存等待的进程状态为<strong>挂起状态</strong>。值得注意的是，PCB并不会一起调到外存，而是会<strong>常驻内存</strong>。PCB中会记录进程数据在外存中的存放位置，进程状态等信息，操作系统通过内存中的PCB来保持对各个进程的监控、管理。<strong>被挂起的进程PCB会被放到的挂起队列中</strong>。</p><p>中级调度(内存调度)，就是要决定将哪个处于挂起状态的进程<strong>重新调入内存</strong>。<br><strong>一个进程可能会被多次调出、调入内存</strong>，因此中级调度发生的频率要比高级调度<strong>更高</strong>。</p><h4 id="挂起状态与七状态模型"><a href="#挂起状态与七状态模型" class="headerlink" title="挂起状态与七状态模型"></a>挂起状态与七状态模型</h4><p>暂时调到外存等待的进程状态称为挂起状态（挂起态suspend）</p><p>挂起态又可以进一步细分为就绪挂起和阻塞挂起两种状态</p><p>与五状态模型共同衍生出了七状态模型</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/%E4%B8%83%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B.jpg" alt="七状态模型"></p><h3 id="低级调度（进程调度）"><a href="#低级调度（进程调度）" class="headerlink" title="低级调度（进程调度）"></a>低级调度（进程调度）</h3><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20211105201425.png"></p><p>低级调度(进程调度)，其主要任务是按照某种方法和策略从就绪队列中选取一一个进程， 将处理机分配给它。</p><p>进程调度是操作系统中<strong>最基本的一种调度</strong>， 在一般的操作系统中都必须配置进程调度。</p><p>进程调度的频率很高，一般几十毫秒一次。</p><h2 id="三级调度比较"><a href="#三级调度比较" class="headerlink" title="三级调度比较"></a>三级调度比较</h2><table><thead><tr><th>-</th><th>要做什么</th><th>调度发生在</th><th>发生频率</th><th>对进程状态的影响</th></tr></thead><tbody><tr><td>高级调度(作业调度)</td><td>按照某种规则，从后备队列中选择合适的作业将其调入内存，并为其创建进程</td><td>外存-&gt;内存(面向作业)</td><td>最低</td><td>无-&gt;创建态-&gt;就绪态</td></tr><tr><td>中级调度(内存调度)</td><td>按照某种规则，从挂起队列中选择合适的进程将其数据调回内存</td><td>外存-&gt;内存(面向进程)</td><td>中等</td><td>挂起态-&gt;就绪态(阻塞挂起-&gt;阻塞态，就绪挂起-&gt;就绪态等等……)</td></tr><tr><td>低级调度(进程调度)</td><td>按照某种规则，从就绪队列中选择一个进程为其分配处理机</td><td>内存-&gt;CPU</td><td>最高</td><td>就绪态-&gt;运行态</td></tr></tbody></table>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;调度&quot;&gt;&lt;a href=&quot;#调度&quot; class=&quot;headerlink&quot; title=&quot;调度&quot;&gt;&lt;/a&gt;调度&lt;/h1&gt;&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;当有多</summary>
-      
-    
-    
-    
-    
-    <category term="操作系统" scheme="http://ywrby.cn/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
