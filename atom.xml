@@ -6,7 +6,7 @@
   <link href="http://ywrby.com/atom.xml" rel="self"/>
   
   <link href="http://ywrby.com/"/>
-  <updated>2023-05-26T22:29:27.699Z</updated>
+  <updated>2023-06-10T15:53:52.599Z</updated>
   <id>http://ywrby.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>1-计算机安全概述</title>
+    <link href="http://ywrby.com/2023/06/03/1-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0/"/>
+    <id>http://ywrby.com/2023/06/03/1-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0/</id>
+    <published>2023-06-02T22:52:47.000Z</published>
+    <updated>2023-06-10T15:53:52.599Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考数目：Computer Security: Principles and Practice, Fourth Edition, by William Stallings and Lawrie Brown. Pearson Higher Ed USA. ISBN 1292220635.</p><h1 id="计算机安全的概念"><a href="#计算机安全的概念" class="headerlink" title="计算机安全的概念"></a>计算机安全的概念</h1><h2 id="计算机安全（computer-security）的定义"><a href="#计算机安全（computer-security）的定义" class="headerlink" title="计算机安全（computer security）的定义"></a>计算机安全（computer security）的定义</h2><p>保证信息系统资产的<strong>机密性、完整性以及可用性</strong>的措施和控制方法，其中资产包括硬件、软件、固件、以及要处理、存储和通信的信息</p><p>机密性、完整性和可用性一起被并称为CIA三元组</p><h3 id="机密性（confidentiality）"><a href="#机密性（confidentiality）" class="headerlink" title="机密性（confidentiality）"></a>机密性（confidentiality）</h3><p>保持对信息访问和披露的限制，包括对个人隐私和专有信息保护的措施。机密性缺失是指非授权的信息披露</p><p>换言之机密性是指个人对资产的访问与披露具有控制能力，在未经许可或授权的情况下，他人无法访问相关数据。在现实中的实例就包括高校学生的教务系统，学生可以在登陆后查阅到个人的考试成绩等隐私信息，而他人在未经许可的情况下无法访问或知晓相关数据。</p><p>机密性包含两个相关概念：</p><ul><li>数据机密性：确保隐私或机密信息不被非授权的个人利用，或被泄露给非授权的个人</li><li>隐私性：确保个人能够控制或影响与自身相关的信息的收集和存储，也能够控制这些信息可以由谁披露或向谁披露</li></ul><h3 id="完整性（integrity）"><a href="#完整性（integrity）" class="headerlink" title="完整性（integrity）"></a>完整性（integrity）</h3><p>防范不正当的信息修改和破坏，包括保证信息的抵抗赖性和真实性。完整性缺失是指非授权的信息修改或破坏。</p><p>和机密性不同，完整性主要强调个人对资产的修改具有控制能力，他人在未经许可的情况下，无法修改或破坏相关数据。在现实中的实例就包括医院的过敏史信息数据库，医生可以在系统中增加修改或删除病人的相关病史，而他人不可以在未经授权的情况下修改或破坏病史，否则会造成严重的后果。</p><p>完整性包含两个相关概念：</p><ul><li>数据完整性：确保信息和程序只能在指定的和得到授权的情况下才能够改变</li><li>系统完整性：确保系统在未受损的方式下执行预期的功能，避免对系统进行有意或无意的非授权操作</li></ul><h3 id="可用性（availability）"><a href="#可用性（availability）" class="headerlink" title="可用性（availability）"></a>可用性（availability）</h3><p>确保系统能够及时响应，并且不能拒绝<strong>授权用户</strong>的服务请求。可用性缺失是指对信息或信息系统的访问和使用的破坏。</p><p>简言之，可用性就是指<strong>授权用户</strong>在任何情况下都应该能够访问系统并且获得服务。在现实中的实例就包括在线交易系统，如果交易系统可用性被破坏，授权用户无法通过系统进行资金交易，则会影响用户的交易热情，造成严重后果。</p><h1 id="威胁、攻击和资产"><a href="#威胁、攻击和资产" class="headerlink" title="威胁、攻击和资产"></a>威胁、攻击和资产</h1><p>在这里首先说明几个重要术语的概念：</p><ul><li>威胁（threat）：任何可能通过<strong>未经授权</strong>的访问、销毁、披露、修改信息以及拒绝服务而对组织运营、组织资产、个人、其他组织或国家产生不利影响的情况或事件</li><li>攻击（attack）：任何类型的恶意活动，试图收集、破坏、拒绝、降级或者破坏信息系统资源或信息本身</li><li>资产（Asset）：也叫系统资源（system resource），主要包括硬件、软件、数据、通信设施和网络</li></ul><h2 id="威胁与攻击"><a href="#威胁与攻击" class="headerlink" title="威胁与攻击"></a>威胁与攻击</h2><table><thead><tr><th>威胁后果（威胁）</th><th>威胁动作（攻击）</th></tr></thead><tbody><tr><td><strong>非授权泄露</strong><br/>实体未经授权而获得对数据访问的情况或事件</td><td>暴露：敏感数据被直接泄露给非授权实体<br/>截获：非授权实体直接访问在授权的源和目的地之间传输的敏感数据<br/>推理：非授权实体通过基于特征的推理或通信产品间接访问敏感数据<br/>入侵：非授权实体通过躲避系统安全保护措施来获得对敏感数据的访问</td></tr><tr><td><strong>欺骗</strong><br/>导致授权实体接收虚假数据并相信其正确性的情况或事件</td><td>冒充：非授权实体通过佯装成授权实体来访问系统或执行恶意行为<br/>伪造：以虚假数据欺骗授权实体<br/>抵赖：一个实体通过虚伪地否认对行为的责任而欺骗另一个实体</td></tr><tr><td><strong>破坏</strong><br/>中断或阻止系统服务和功能正确运行的情况或事件</td><td>失能：通过禁用系统组件来阻止或中断系统运行<br/>损坏：通过对系统功能或数据的不利修改来对系统运行进行非期望的改变<br/>阻碍：通过阻止系统运行来中断系统服务交付的威胁活动</td></tr><tr><td><strong>篡夺</strong><br/>导致系统服务或功能被非授权实体控制的情况或事件</td><td>盗用：实体对系统资源采取非授权的逻辑或物理控制<br/>误用：导致系统组件执行对系统有害的功能或服务</td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;参考数目：Computer Security: Principles and Practice, Fourth Edition, by William Stallings and Lawrie Brown. Pearson Higher Ed USA. ISBN 12922</summary>
+      
+    
+    
+    
+    
+    <category term="网络安全" scheme="http://ywrby.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="计算机安全" scheme="http://ywrby.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>集乐-统一多媒体文件资源管理器</title>
@@ -456,29 +480,6 @@
       
       
     <summary type="html">&lt;h1 id=&quot;调度算法的评价指标&quot;&gt;&lt;a href=&quot;#调度算法的评价指标&quot; class=&quot;headerlink&quot; title=&quot;调度算法的评价指标&quot;&gt;&lt;/a&gt;调度算法的评价指标&lt;/h1&gt;&lt;h3 id=&quot;CPU利用率&quot;&gt;&lt;a href=&quot;#CPU利用率&quot; class=&quot;head</summary>
-      
-    
-    
-    
-    
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11-进程调度的时机，方式，切换与过程</title>
-    <link href="http://ywrby.com/2021/11/05/11-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%EF%BC%8C%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%87%E7%A8%8B/"/>
-    <id>http://ywrby.com/2021/11/05/11-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9A%84%E6%97%B6%E6%9C%BA%EF%BC%8C%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%88%87%E6%8D%A2%E4%B8%8E%E8%BF%87%E7%A8%8B/</id>
-    <published>2021-11-05T12:18:57.000Z</published>
-    <updated>2021-11-05T13:00:35.613Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h1><p>进程调度(低级调度)，就是按照某种算法从就绪队列中选择一个进程为其分配处理机</p><h2 id="需要进行进程调度与切换的情况（进程调度的时机）"><a href="#需要进行进程调度与切换的情况（进程调度的时机）" class="headerlink" title="需要进行进程调度与切换的情况（进程调度的时机）"></a>需要进行进程调度与切换的情况（进程调度的时机）</h2><h3 id="1-当前运行的进程主动放弃处理机"><a href="#1-当前运行的进程主动放弃处理机" class="headerlink" title="1. 当前运行的进程主动放弃处理机"></a>1. 当前运行的进程主动放弃处理机</h3><ul><li>进程正常终止</li><li>运行过程中发生异常而终止</li><li>进程主动请求阻塞（如等待I/O设备）</li></ul><h3 id="2-当前运行的进程被动放弃处理机"><a href="#2-当前运行的进程被动放弃处理机" class="headerlink" title="2. 当前运行的进程被动放弃处理机"></a>2. 当前运行的进程被动放弃处理机</h3><ul><li>分给进程的时间片用完</li><li>有更紧急的事情需要处理（如I/O中断）</li><li>有更高优先级的进程进入就绪队列</li></ul><h2 id="不能进行进程调度与切换的情况"><a href="#不能进行进程调度与切换的情况" class="headerlink" title="不能进行进程调度与切换的情况"></a>不能进行进程调度与切换的情况</h2><ul><li>在处理中断的过程中：中断处理过程复杂，与硬件密切相关，很难做到在中断处理过程中进行进程切换</li><li><strong>进程在操作系统内核程序临界区中（具体解释见下文）</strong></li><li>在原子操作过程中(原语)。原子操作不可中断，要一气呵成，所以运行过程中不可进行进程调度或切换</li></ul><h3 id="进程在操作系统内核程序临界区中不能进行进程调度和切换。"><a href="#进程在操作系统内核程序临界区中不能进行进程调度和切换。" class="headerlink" title="进程在操作系统内核程序临界区中不能进行进程调度和切换。"></a>进程在操作系统内核程序临界区中不能进行进程调度和切换。</h3><p><strong>临界资源</strong>：一个时间段内只允许一个进程使用的资源，各个进程需要互斥的访问临界资源</p><p><strong>临界区</strong>：访问临界资源的代码</p><p>内核程序临界区一般是用来访问某种内核数据结构的，比如进程的就绪队列（由各就绪进程PCB组成）</p><p>假如某进程当前正处在内核程序临界区，并且正在/之前访问就绪队列，则该进程会对就绪队列进行上锁操作，只要改进程不退出临界区，就绪队列的锁就不会释放，如果在此时进行进程调度或切换，调度操作的相关程序势必要访问就绪队列，可由于上锁所以无法访问，进程调度也就无法正常进行</p><p>由此可见，内核程序临界区访问的临界资源如果不尽快释放的话，极易影响到操作需要内核其他管理工作，因此在访问内核程序临界区期间，不可以进行进程调度与切换，而是尽快执行完当前程序，尽早离开内核程序临界区</p><p>注意，进程处于临界区时不能进行处理机调度这种说法是<strong>错误</strong>的。假如进程访问的不少内核程序临界区，而是普通程序临界区，我们一般更倾向于及时进行进程的调度和切换</p><p>例如，当进程处在普通程序临界区中访问打印机资源时，进程同样会对打印机资源上锁，在打印机打印完成前，进程一直处于临界区内，并且临界资源不会解锁。但是，打印机是慢速设备，如果此时禁止进程调度则当前进程一直等待，导致CPU一直处于空闲状态。这是一种极大的资源浪费。同时，普通临界区访问的临界资源并不会直接影响操作系统内核的管理工作（打印机等资源被占用不会影响进程调度的实现），因此在访问普通资源时可以进行进程调度和切换</p><h2 id="进程调度的方式"><a href="#进程调度的方式" class="headerlink" title="进程调度的方式"></a>进程调度的方式</h2><h3 id="非剥夺调度方式"><a href="#非剥夺调度方式" class="headerlink" title="非剥夺调度方式"></a>非剥夺调度方式</h3><p>又称非抢占方式。即，只允许进程主动放弃处理机。在运行过程中即便有更紧迫的任务到达，当前进程依然会继续使用处理机，直到该进程终止或主动要求进入阻塞态。</p><p>优缺点：实现简单，系统开销小但是无法及时处理紧急任务，适合于早期的批处理系统</p><h3 id="剥夺调度方式"><a href="#剥夺调度方式" class="headerlink" title="剥夺调度方式"></a>剥夺调度方式</h3><p>又称抢占方式。当一个进程正在处理机上执行时，如果有一个更重要或更紧迫的进程需要使用处理机，则立即暂停正在执行的进程，将处理机分配给更重要紧迫的那个进程。</p><p>优缺点：可以优先处理更紧急的进程，也可实现让各进程按时间片轮流执行的功能( 通过时钟中断)。适合于分时操作系统、实时操作系统</p><h2 id="进程的切换与过程"><a href="#进程的切换与过程" class="headerlink" title="进程的切换与过程"></a>进程的切换与过程</h2><p><strong>“狭义的进程调度”与“进程切换”的区别:</strong><br>狭义的进程调度指的是从就绪队列中选中一个要运行的进程。(这个进程可以是刚刚被暂停执行的进程，也可能是另一个进程，后一种情况就需要进程切换)<br>进程切换是指一个进程让出处理机，由另一个进程占用处理机的过程。</p><p><strong>广义的进程调度</strong>包含了选择一个进程和进程切换两个步骤。</p><h3 id="进程切换的过程主要完成了"><a href="#进程切换的过程主要完成了" class="headerlink" title="进程切换的过程主要完成了:"></a>进程切换的过程主要完成了:</h3><ol><li><strong>对原来运行进程各种数据的保存</strong></li><li><strong>对新的进程各种数据的恢复</strong>(如:程序计数器、程序状态字、各种数据寄存器等处理机现场信息，这些信息一般保存在进程控制块PCB)</li></ol><h3 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h3><p>进程切换是有代价的，因此如果过于频繁的进行进程调度、切换，必然会使整个系统的效率降低，使系统大部分时间都花在了进程切换上，而真正用于执行进程的时间减少。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;进程调度&quot;&gt;&lt;a href=&quot;#进程调度&quot; class=&quot;headerlink&quot; title=&quot;进程调度&quot;&gt;&lt;/a&gt;进程调度&lt;/h1&gt;&lt;p&gt;进程调度(低级调度)，就是按照某种算法从就绪队列中选择一个进程为其分配处理机&lt;/p&gt;
-&lt;h2 id=&quot;需要进行进程调度与切换</summary>
       
     
     
