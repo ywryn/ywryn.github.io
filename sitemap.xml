@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://ywrby.com/2021/07/03/%E5%B0%86%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%87%B3CSDN/</loc>
-    
-    <lastmod>2023-07-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://ywrby.com/2023/06/03/1-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0/</loc>
     
     <lastmod>2023-06-19</lastmod>
@@ -1297,6 +1288,20 @@
   </url>
   
   <url>
+    <loc>http://ywrby.com/tags/JavaWeb/</loc>
+    <lastmod>2023-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ywrby.com/tags/MySQL/</loc>
+    <lastmod>2023-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://ywrby.com/tags/SpringBoot/</loc>
     <lastmod>2023-07-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -1311,21 +1316,7 @@
   </url>
   
   <url>
-    <loc>http://ywrby.com/tags/MySQL/</loc>
-    <lastmod>2023-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://ywrby.com/tags/Vue/</loc>
-    <lastmod>2023-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://ywrby.com/tags/JavaWeb/</loc>
     <lastmod>2023-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1409,6 +1400,13 @@
   </url>
   
   <url>
+    <loc>http://ywrby.com/tags/Swagger/</loc>
+    <lastmod>2023-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://ywrby.com/tags/%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88/</loc>
     <lastmod>2023-07-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -1424,13 +1422,6 @@
   
   <url>
     <loc>http://ywrby.com/tags/P2P/</loc>
-    <lastmod>2023-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://ywrby.com/tags/Swagger/</loc>
     <lastmod>2023-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1481,6 +1472,13 @@
   </url>
   
   <url>
+    <loc>http://ywrby.com/categories/%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/</loc>
+    <lastmod>2023-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://ywrby.com/categories/%E5%90%8E%E7%AB%AF/Java/</loc>
     <lastmod>2023-07-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -1503,13 +1501,6 @@
   
   <url>
     <loc>http://ywrby.com/categories/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2023-07-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://ywrby.com/categories/%E5%90%8E%E7%AB%AF/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/</loc>
     <lastmod>2023-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
