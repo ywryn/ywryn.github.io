@@ -6,7 +6,7 @@
   <link href="http://ywrby.com/atom.xml" rel="self"/>
   
   <link href="http://ywrby.com/"/>
-  <updated>2023-07-15T23:28:17.620Z</updated>
+  <updated>2023-07-18T06:56:18.569Z</updated>
   <id>http://ywrby.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2-密码编码工具</title>
+    <link href="http://ywrby.com/2023/07/18/2-%E5%AF%86%E7%A0%81%E7%BC%96%E7%A0%81%E5%B7%A5%E5%85%B7/"/>
+    <id>http://ywrby.com/2023/07/18/2-%E5%AF%86%E7%A0%81%E7%BC%96%E7%A0%81%E5%B7%A5%E5%85%B7/</id>
+    <published>2023-07-18T06:18:22.000Z</published>
+    <updated>2023-07-18T06:56:18.569Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数论基础"><a href="#数论基础" class="headerlink" title="数论基础"></a>数论基础</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;数论基础&quot;&gt;&lt;a href=&quot;#数论基础&quot; class=&quot;headerlink&quot; title=&quot;数论基础&quot;&gt;&lt;/a&gt;数论基础&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="计算机基础" scheme="http://ywrby.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    <category term="网络安全" scheme="http://ywrby.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="网络安全" scheme="http://ywrby.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="计算机安全" scheme="http://ywrby.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>1-计算机安全概述</title>
@@ -522,32 +550,6 @@
       
       
     <summary type="html">&lt;h1 id=&quot;常见调度算法&quot;&gt;&lt;a href=&quot;#常见调度算法&quot; class=&quot;headerlink&quot; title=&quot;常见调度算法&quot;&gt;&lt;/a&gt;常见调度算法&lt;/h1&gt;&lt;h2 id=&quot;FCFS-先来先服务-First-Come-First-Server&quot;&gt;&lt;a href=&quot;#FCF</summary>
-      
-    
-    
-    
-    <category term="计算机基础" scheme="http://ywrby.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    <category term="操作系统" scheme="http://ywrby.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>12-调度算法的评价指标</title>
-    <link href="http://ywrby.com/2021/11/06/12-%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/"/>
-    <id>http://ywrby.com/2021/11/06/12-%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</id>
-    <published>2021-11-05T13:00:57.000Z</published>
-    <updated>2023-06-15T06:41:25.519Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="调度算法的评价指标"><a href="#调度算法的评价指标" class="headerlink" title="调度算法的评价指标"></a>调度算法的评价指标</h1><h3 id="CPU利用率"><a href="#CPU利用率" class="headerlink" title="CPU利用率"></a>CPU利用率</h3><p>指CPU忙碌时间占总时间的比例</p><p>$$利用率=\frac{忙碌的时间}{总时间}$$</p><p>Eg:某计算机只支持单道程序，某个作业刚开始需要在CPU上运行5秒，再用打印机打印输出5秒，之后再执行5秒，才能结束。在此过程中CPU利用率、打印机利用率分别是多少?</p><p>$$CPU利用率=\frac{5+5}{5+5+5}=66.67%$$</p><p>$$打印机利用率=\frac{5}{5+5+5}=33.33%$$</p><h3 id="系统吞吐量"><a href="#系统吞吐量" class="headerlink" title="系统吞吐量"></a>系统吞吐量</h3><p>单位时间内完成作业的数量，对于计算机而言，肯定更希望用尽可能少的时间处理完尽可能多的作业，即系统吞吐量越大越好</p><p>$$系统吞吐量=\frac{总共完成的作业数目}{总共花费的时间总数}(单位：道/秒)$$</p><h3 id="周转时间"><a href="#周转时间" class="headerlink" title="周转时间"></a>周转时间</h3><p>指从作业被提交给系统开始，到作业完成为止的这段时间间隔。由四部分组成：</p><ul><li>高级调度时间：作业在外存后被队列上等待的时间(在一个作业处理过程中，只会发生一次)</li><li>低级调度时间(就绪态)：进程在就绪队列上等待进程调度的时间。即进程处于就绪态的情况</li><li>运行态：进程在CPU上执行的时间</li><li>阻塞态：进程等待I/O设备操作完成的时间</li></ul><p>(后三种时间在一个作业的整个处理过程种可能发生多次)</p><p>$$单个作业周转时间=作业完成时间-作业提交时间$$<br>$$平均周转时间=\frac{各作业周转时间之和}{作业数}$$</p><h4 id="带权周转时间"><a href="#带权周转时间" class="headerlink" title="带权周转时间"></a>带权周转时间</h4><p>$$带权周转时间=\frac{作业周转时间}{作业实际运行时间}=\frac{作业完成时间-作业提交时间}{作业实际运行的时间}$$</p><p>由上述公式易知带权周转时间必然大于1，带权周转时间与周转时间都是越小越好 </p><p>对于<strong>周转时间相同</strong>的两个作业，实际运行时间长的作业在相同时间内被服务的时间更多，带权周转时间更小，用户满意度更高。</p><p>对于<strong>实际运行时间相同</strong>的两个作业，周转时间短的带权周转时间更小，用户满意度更高。</p><h3 id="等待时间"><a href="#等待时间" class="headerlink" title="等待时间"></a>等待时间</h3><p>指进程/作业处于等待处理机状态的时间之和，等待时间越长，用户满意度越低</p><p>对于<strong>进程</strong>来说，等待时间就是指进程建立后<strong>等待被服务的时间之和</strong>，在<strong>等待I/0完成的期间其实进程也是在被服务的，所以不计入等待时间</strong>。</p><p>对于<strong>作业</strong>来说，不仅要考虑<strong>建立进程后</strong>的等待时间，还要加上<strong>作业在外存后备队列</strong>中等待的时间。</p><p>一个作业总共需要被CPU服务多久，被I/O设备服务多久一般是确定不变的，因此调度算法影响的一般只是任务/进程的等待时间</p><h3 id="响应事件"><a href="#响应事件" class="headerlink" title="响应事件"></a>响应事件</h3><p>指从用户提交请求到首次产生响应所用的时间</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;调度算法的评价指标&quot;&gt;&lt;a href=&quot;#调度算法的评价指标&quot; class=&quot;headerlink&quot; title=&quot;调度算法的评价指标&quot;&gt;&lt;/a&gt;调度算法的评价指标&lt;/h1&gt;&lt;h3 id=&quot;CPU利用率&quot;&gt;&lt;a href=&quot;#CPU利用率&quot; class=&quot;head</summary>
       
     
     
