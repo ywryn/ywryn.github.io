@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Password</title>
+      <link href="/2023/07/25/Password/"/>
+      <url>/2023/07/25/Password/</url>
+      
+        <content type="html"><![CDATA[<h1 id="FOCUS-OF-THIS-LECTURE"><a href="#FOCUS-OF-THIS-LECTURE" class="headerlink" title="FOCUS OF THIS LECTURE"></a>FOCUS OF THIS LECTURE</h1><ul><li>Understand identification and authentication</li><li> Learn how passwords are protected</li></ul><h1 id="身份识别和认证"><a href="#身份识别和认证" class="headerlink" title="身份识别和认证"></a>身份识别和认证</h1><h2 id="身份识别（IDENTIFICATION）"><a href="#身份识别（IDENTIFICATION）" class="headerlink" title="身份识别（IDENTIFICATION）"></a>身份识别（IDENTIFICATION）</h2><p>系统实体提供其声明的身份的过程，例如UPI（统一支付接口）</p><h2 id="认证（Authentication）"><a href="#认证（Authentication）" class="headerlink" title="认证（Authentication）"></a>认证（Authentication）</h2><p><strong>验证</strong>系统实体声明的身份的过程，例如PIN码或秘密</p><h1 id="密码漏洞（PASSWORD-VULNERABILITIES）"><a href="#密码漏洞（PASSWORD-VULNERABILITIES）" class="headerlink" title="密码漏洞（PASSWORD VULNERABILITIES）"></a>密码漏洞（PASSWORD VULNERABILITIES）</h1><h2 id="Offline-dictionary-attack-离线字典攻击"><a href="#Offline-dictionary-attack-离线字典攻击" class="headerlink" title="Offline dictionary attack 离线字典攻击"></a>Offline dictionary attack 离线字典攻击</h2><p>离线字典攻击就是攻击者获取到口令文件（字典），有了离线字典文件后,针对口令文件攻击者直接查表，一旦哈希值匹配成功了，那么就可以得到口令明文。</p><p>应对策略：</p><ul><li>防止未经授权访问密码文件</li><li>识别入侵的入侵检测措施</li><li>快速重新发布密码</li></ul><h2 id="Specific-account-attack-特定账户攻击"><a href="#Specific-account-attack-特定账户攻击" class="headerlink" title="Specific account attack 特定账户攻击"></a>Specific account attack 特定账户攻击</h2><p>攻击者针对某些特定账户进行攻击，不断猜测并提交密码直到成功</p><p>应对策略：</p><ul><li>尝试失败一定次数后锁定机制</li><li>另一种方法是逐渐延迟每次后续尝试</li></ul><h2 id="Popular-password-attack-流行密码攻击"><a href="#Popular-password-attack-流行密码攻击" class="headerlink" title="Popular password attack 流行密码攻击"></a>Popular password attack 流行密码攻击</h2><p>用户倾向于选择容易记住的密码（例如：“123456”），这使得密码很容易被猜出，攻击者可以针对各种用户 ID 尝试常用密码</p><p>应对策略：</p><ul><li>实施复杂的密码策略</li><li>扫描 IP 地址和客户端 cookie 以获取提交模式</li><li>入侵检测</li></ul><h2 id="Password-guessing-against-single-user-针对单个用户的密码猜测"><a href="#Password-guessing-against-single-user-针对单个用户的密码猜测" class="headerlink" title="Password guessing against single user 针对单个用户的密码猜测"></a>Password guessing against single user 针对单个用户的密码猜测</h2><p>了解单个用户的相关信息，了解系统密码策略，使用两者来猜测密码</p><p>应对策略：</p><ul><li>教育用户</li><li>执行复杂的密码策略</li></ul><h2 id="Workstation-hijacking-工作站劫持"><a href="#Workstation-hijacking-工作站劫持" class="headerlink" title="Workstation hijacking 工作站劫持"></a>Workstation hijacking 工作站劫持</h2><p>攻击者等待，直到登录的工作站无人值守</p><p>应对策略：</p><ul><li>一段时间不活动后注销</li><li>入侵检测方案可用于检测用户行为的变化</li></ul><h2 id="Exploiting-user-mistakes-利用用户错误"><a href="#Exploiting-user-mistakes-利用用户错误" class="headerlink" title="Exploiting user mistakes 利用用户错误"></a>Exploiting user mistakes 利用用户错误</h2><p>用户可能会使用系统分配的密码，根本问题是这些密码可能很难记住，攻击者可以使用社会工程技巧来诱骗用户泄露密码，其次，许多系统附带了管理员的默认密码</p><p>应对策略：</p><ul><li>更改默认密码</li><li>教育用户</li></ul><h2 id="Exploiting-same-password-use-利用相同的密码复用"><a href="#Exploiting-same-password-use-利用相同的密码复用" class="headerlink" title="Exploiting same password use 利用相同的密码复用"></a>Exploiting same password use 利用相同的密码复用</h2><p>用户可能在不同的服务选择使用相同的密码，攻击者可以从一个来源获知密码，他们可以尝试在用户可能使用的其他服务中使用相同的密码进行攻击</p><p>应对策略：</p><ul><li>选择不同的密码</li><li>教育用户</li></ul><h2 id="Electronic-monitoring-电子监控"><a href="#Electronic-monitoring-电子监控" class="headerlink" title="Electronic monitoring 电子监控"></a>Electronic monitoring 电子监控</h2><p>以明文形式传递密码，攻击者很容易窃听并获取密码</p><p>应对策略：</p><ul><li>切勿以明文形式发送密码</li><li>密码安全传输的技术解决方案</li></ul><h1 id="加盐的密码加载过程（LOADING-PASSWORD-SALT-WITH-HASH）"><a href="#加盐的密码加载过程（LOADING-PASSWORD-SALT-WITH-HASH）" class="headerlink" title="加盐的密码加载过程（LOADING PASSWORD: SALT WITH HASH）"></a>加盐的密码加载过程（LOADING PASSWORD: SALT WITH HASH）</h1><p>为了缓解某些密码漏洞，可以使用盐，盐可以是随机数，盐会增加攻击者的工作量</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20230725211849.jpg"></p><p>注册时，服务器可以存储 </p><ul><li>UserID </li><li>Salt</li><li>加盐密码的哈希值</li></ul><h1 id="加盐的密码验证过程（VERIFYING-PASSWORD-SALT-WITH-HASH）"><a href="#加盐的密码验证过程（VERIFYING-PASSWORD-SALT-WITH-HASH）" class="headerlink" title="加盐的密码验证过程（VERIFYING PASSWORD: SALT WITH HASH）"></a>加盐的密码验证过程（VERIFYING PASSWORD: SALT WITH HASH）</h1><p>用户提供用户 ID 和密码，查找相应的盐和哈希，根据检索到的盐和输入的密码重新计算哈希，如果结果匹配，则接受密码</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20230725212215.jpg"></p><h1 id="随机盐的好处"><a href="#随机盐的好处" class="headerlink" title="随机盐的好处"></a>随机盐的好处</h1><ul><li>很难猜测一个用户是否为多个服务选择相同的密码</li><li>很难猜测多个用户是否为单个服务（或多个）选择相同的密码</li><li>使离线字典攻击变得困难</li></ul><p>攻击者可以使用彩虹表来预先计算带有加盐哈希值的字典</p><ul><li>解决方案是使用大盐</li></ul><h1 id="多重身份验证-MULTI-FACTOR-AUTHENTICATION"><a href="#多重身份验证-MULTI-FACTOR-AUTHENTICATION" class="headerlink" title="多重身份验证 MULTI-FACTOR AUTHENTICATION"></a>多重身份验证 MULTI-FACTOR AUTHENTICATION</h1><p>不同的身份验证因素或方式 </p><p>Different factors or means of authentication</p><ul><li>Something you know<ul><li>E.g., PIN or password</li></ul></li><li>Something you have (token)<ul><li>E.g., smartcard</li></ul></li><li>Something you are (static biometrics)<ul><li>E.g., fingerprint</li></ul></li><li>Something you do (dynamic biometrics)<ul><li>E.g., voice pattern or behaviour analysis</li></ul></li></ul><p>使用两个或多个因素来启用双因素或多因素身份验证</p><h1 id="对策（COUNTERMEASURES）总结"><a href="#对策（COUNTERMEASURES）总结" class="headerlink" title="对策（COUNTERMEASURES）总结"></a>对策（COUNTERMEASURES）总结</h1><ul><li>Educate users</li><li>Use multi-factor authentication</li><li>Better notifications to users for password reset</li><li>Phone call and reply by voice in case of</li><li>password reset</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> UOA </category>
+          
+          <category> COMPSCI 316 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网络安全 </tag>
+            
+            <tag> 计算机安全 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>GDPR</title>
       <link href="/2023/07/22/GDPR/"/>
       <url>/2023/07/22/GDPR/</url>
