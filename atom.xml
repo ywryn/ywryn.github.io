@@ -6,7 +6,7 @@
   <link href="http://ywrby.com/atom.xml" rel="self"/>
   
   <link href="http://ywrby.com/"/>
-  <updated>2023-07-25T09:26:23.396Z</updated>
+  <updated>2023-07-30T02:20:12.370Z</updated>
   <id>http://ywrby.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Access Control</title>
+    <link href="http://ywrby.com/2023/07/29/Access-Control/"/>
+    <id>http://ywrby.com/2023/07/29/Access-Control/</id>
+    <published>2023-07-29T08:44:56.000Z</published>
+    <updated>2023-07-30T02:20:12.370Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="FOCUS-OF-THIS-LECTURE"><a href="#FOCUS-OF-THIS-LECTURE" class="headerlink" title="FOCUS OF THIS LECTURE"></a>FOCUS OF THIS LECTURE</h1><ul><li>Identify access control requirements</li><li>Know access control elements</li><li>Understand access control systems</li></ul><h1 id="授权（AUTHORISATION）"><a href="#授权（AUTHORISATION）" class="headerlink" title="授权（AUTHORISATION）"></a>授权（AUTHORISATION）</h1><p>向系统实体授予权利或权限以提供对特定资源的访问的过程，也称访问控制（Access Control）</p><h2 id="访问控制要求（ACCESS-CONTROL-REQUIREMENTS）"><a href="#访问控制要求（ACCESS-CONTROL-REQUIREMENTS）" class="headerlink" title="访问控制要求（ACCESS CONTROL REQUIREMENTS）"></a>访问控制要求（ACCESS CONTROL REQUIREMENTS）</h2><ul><li>可靠的输入（Reliable inputs）<ul><li>经过身份认证的实体，例如使用UPI或密码登录</li><li>真实的资料，例如学生或教职工成员</li></ul></li><li>最小特权（Least privilege）<ul><li> 最小特权原则表示授予完成某项工作的最低访问权限集，例如，访问单个课程与所有课程</li></ul></li><li>管理职责（Administrative duties）<ul><li>只有特殊实体才能管理访问权限，例如，管理员授予、撤销或更新访问权限</li></ul></li></ul><h2 id="访问控制组件（AC-ELEMENTS）"><a href="#访问控制组件（AC-ELEMENTS）" class="headerlink" title="访问控制组件（AC ELEMENTS）"></a>访问控制组件（AC ELEMENTS）</h2><ul><li>主体（Subject）<ul><li>可以访问对象的实体，它可以是用户也可以是用户授权的进程</li></ul></li><li>对象（Object）<ul><li>需要被保护的实体，例如文件、目录或其他资源</li></ul></li><li>访问权限（Access right）<ul><li>一个访问权限r ∈ R 描述了一个主体s ∈ S 如何访问对象o ∈ O </li><li>例如：读、写、执行、删除、创建、搜索等</li></ul></li></ul><h2 id="访问控制系统（AC-SYSTEM）"><a href="#访问控制系统（AC-SYSTEM）" class="headerlink" title="访问控制系统（AC SYSTEM）"></a>访问控制系统（AC SYSTEM）</h2><ul><li>访问控制方法（AC Function）f(s, o, r)<ul><li>它查找（s, o）组合的访问权限 r </li><li>如果匹配成功，则允许访问，否则不允许访问</li></ul></li><li>安全管理员（Security administrator）<ul><li>管理访问权限的实体</li></ul></li><li>审计员（Auditor）<ul><li>检查整个授权系统的实体</li></ul></li></ul><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20230730135723.jpg"></p><h2 id="访问控制模型（AC-MODELS）"><a href="#访问控制模型（AC-MODELS）" class="headerlink" title="访问控制模型（AC MODELS）"></a>访问控制模型（AC MODELS）</h2><h3 id="自主访问控制-Discretionary-Access-Control-DAC"><a href="#自主访问控制-Discretionary-Access-Control-DAC" class="headerlink" title="自主访问控制 Discretionary Access Control (DAC)"></a>自主访问控制 Discretionary Access Control (DAC)</h3><p>用户可以自主保护自己拥有的内容</p><ul><li>所有者可以授予主体访问权限</li><li>根据请求者的身份授予访问权限</li><li>这些机制足以满足诚实用户的要求</li><li>容易受到特洛伊木马的攻击</li><li>DAC 用于操作系统<ul><li>例如，Linux 文件权限: rwxr-x–x</li></ul></li></ul><p>访问控制矩阵</p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20230730140543.jpg"></p><h3 id="基于角色的访问控制-ROLE-BASED-ACCESS-CONTROL-RBAC"><a href="#基于角色的访问控制-ROLE-BASED-ACCESS-CONTROL-RBAC" class="headerlink" title="基于角色的访问控制 ROLE-BASED ACCESS CONTROL (RBAC)"></a>基于角色的访问控制 ROLE-BASED ACCESS CONTROL (RBAC)</h3><p>RBAC 将角色映射到访问权限</p><ul><li>支持复杂的访问控制</li><li>减少管理错误</li><li>易于管理<ul><li>将用户移入和移出角色</li><li>将权限移入和移出角色</li><li>非常灵活</li></ul></li><li>最小特权<ul><li>根据需要限制访问</li><li>通过约束进行职责分离</li></ul></li></ul><p>RBAC模型构成</p><ul><li>用户User<ul><li>通常是人类</li><li>用户被分配角色：用户分配（UA）</li></ul></li><li>权限Permissions<ul><li>批准访问某些对象的模式</li><li>权限代表可以对对象执行哪些操作</li></ul></li><li>角色Roles<ul><li>职务</li><li>角色分配权限：权限分配（PA）</li></ul></li><li>分配Assignments<ul><li>用户角色和角色权限</li></ul></li><li>会话Session<ul><li>用户到角色的映射</li><li>会话是用户和已分配角色的激活子集之间的映射</li></ul></li><li>约束Constraints<ul><li>会话、分配和角色</li></ul></li></ul><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20230730142000.jpg"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;FOCUS-OF-THIS-LECTURE&quot;&gt;&lt;a href=&quot;#FOCUS-OF-THIS-LECTURE&quot; class=&quot;headerlink&quot; title=&quot;FOCUS OF THIS LECTURE&quot;&gt;&lt;/a&gt;FOCUS OF THIS LECTURE&lt;/</summary>
+      
+    
+    
+    
+    <category term="UOA" scheme="http://ywrby.com/categories/UOA/"/>
+    
+    <category term="COMPSCI 316" scheme="http://ywrby.com/categories/UOA/COMPSCI-316/"/>
+    
+    
+    <category term="网络安全" scheme="http://ywrby.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="计算机安全" scheme="http://ywrby.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>Password</title>
@@ -529,34 +557,6 @@
       
       
     <summary type="html">&lt;h1 id=&quot;信号量机制实现进程互斥&quot;&gt;&lt;a href=&quot;#信号量机制实现进程互斥&quot; class=&quot;headerlink&quot; title=&quot;信号量机制实现进程互斥&quot;&gt;&lt;/a&gt;信号量机制实现进程互斥&lt;/h1&gt;&lt;h2 id=&quot;主要步骤&quot;&gt;&lt;a href=&quot;#主要步骤&quot; class=&quot;</summary>
-      
-    
-    
-    
-    <category term="计算机基础" scheme="http://ywrby.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    <category term="操作系统" scheme="http://ywrby.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="操作系统" scheme="http://ywrby.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>15-信号量机制</title>
-    <link href="http://ywrby.com/2021/11/09/15-%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6/"/>
-    <id>http://ywrby.com/2021/11/09/15-%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6/</id>
-    <published>2021-11-08T12:33:49.000Z</published>
-    <updated>2023-06-15T06:42:56.691Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="信号量机制"><a href="#信号量机制" class="headerlink" title="信号量机制"></a>信号量机制</h1><p>在我们之前学习的有关进程互斥的硬件软件方法中，都存在着一些不可避免的问题</p><ul><li>例如在双标志检查法中，由于检查和上锁操作不能原子性的完成，导致两个进程可能同时进入临界区</li><li>又比如之前所讲的软硬件方法都无法实现“让权等待”</li></ul><p>基于以上所说的问题，我们最终提出了有效解决进程互斥与进程同步的方法–信号量机制</p><p>用户进程可以通过使用操作系统提供的一对原语来对信号量进行操作，从而方便的实现进程互斥与进程同步</p><p>信号量实质就是一个变量（可以是一个整数，也可以是复杂的记录型变量），可以用一个信号量来表示系统中某种资源的数量（例如：系统有两台打印机，就可以设置一个信号量初始值为2）</p><p>原语是一种特殊程序段，其执行只能一气呵成，不可中断。原语是利用开/关中断指令实现的。软件解决方案的主要问题基本都出在进入区中的各种操作不能原子性的执行，因此如果能把进入区，退出区的操作都利用原语实现，就可以避免问题的产生</p><p>我们所使用的一对原语是：wait(S)原语和signal(S)原语，可以把原语理解为我们自己写的函数，函数名为wait和signal，括号里的S表示信号量S，其实就是函数调用时所传入的一个参数</p><p>wait和signal原语常被称为P,V操作，因此做题时也常将其写作P(S),V(S)</p><h2 id="整型信号量"><a href="#整型信号量" class="headerlink" title="整型信号量"></a>整型信号量</h2><p>用一个整数型变量作为信号量，用来表示系统中某种资源的数量，整数型信号量与我们平常创建的普通整数变量的区别主要是我们对该信号量只能进行三种操作：即初始化或P操作和V操作</p><p>例如：系统中有一台打印机</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> S=<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">wait</span><span class="params">(<span class="keyword">int</span> S)</span> </span>&#123; <span class="comment">//wait原语，相当于进入区</span></span><br><span class="line">    <span class="comment">//检查和上锁一气呵成，避免了并发过程中异步导致的问题</span></span><br><span class="line">    <span class="keyword">while</span>(S&lt;=<span class="number">0</span>); <span class="comment">//如果资源不够，则始终循环等待，这一步不满足“让权等待”</span></span><br><span class="line">    S=S-<span class="number">1</span>; <span class="comment">//如果资源足够，则占用一个资源</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">signal</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123; <span class="comment">//signal原语，相当于退出区</span></span><br><span class="line">    S=S+<span class="number">1</span>;  <span class="comment">//在使用完资源后，在退出区释放资源</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20211108205942.png"></p><p>按照上面示例，P0进程在进入区利用wait原语申请资源，然后进入临界区，此时S减一后为0，P1到Pn进程只能在wait原语中循环等待，直到P0进程释放资源。</p><p>此时就不会出现我们之前的两个进程同时进入临界区的情况，因为wait是原语，其执行原子性操作，所以检查和上锁是同时进行的</p><h2 id="记录型信号量"><a href="#记录型信号量" class="headerlink" title="记录型信号量"></a>记录型信号量</h2><p>整型信号量存在的缺陷是不满足“让权等待”存在忙等，所以人们又提出了“记录型信号量”，即用记录型数据结构表示的信号量</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*记录型信号量的定义*/</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> value;  <span class="comment">//剩余资源数</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">process</span> *<span class="title">L</span>;</span>  <span class="comment">//等待队列</span></span><br><span class="line">&#125;semaphore</span><br><span class="line"></span><br><span class="line"><span class="comment">/*某进程需要使用资源时，通过wait原语申请*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">wait</span><span class="params">(semaphore S)</span></span>&#123;</span><br><span class="line">    S.value--;  <span class="comment">//将资源数减一</span></span><br><span class="line">    <span class="keyword">if</span>(S.value&lt;<span class="number">0</span>)&#123; <span class="comment">//判断资源数是否小于0</span></span><br><span class="line">        <span class="comment">//小于0表示剩余资源不足</span></span><br><span class="line">        block(S.L);</span><br><span class="line">        <span class="comment">//使用block原语使进程从运行态进入阻塞态，</span></span><br><span class="line">        <span class="comment">//并把该进程挂到信号量S的等待队列（即阻塞队列中）</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*进程使用完资源后，使用signal原语释放资源*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">signal</span><span class="params">(semaphore S)</span></span>&#123;</span><br><span class="line">    S.value++;  <span class="comment">//将剩余资源数加一</span></span><br><span class="line">    <span class="keyword">if</span>(S.value&lt;=<span class="number">0</span>)&#123; <span class="comment">//判断资源数是否小于等于0</span></span><br><span class="line">        <span class="comment">//资源数小于等于0表示等待队列中还有进程处于阻塞态等待资源释放</span></span><br><span class="line">        wakeup(S.L)</span><br><span class="line">        <span class="comment">//利用wakeup原语唤醒等待队列中的一个进程</span></span><br><span class="line">        <span class="comment">//该进程从阻塞态转变为就绪态</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20211108212318.png"></p><p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20211108212327.png"></p><p>现在有四个进程按照P0-&gt;P3的顺序申请使用打印机</p><ol><li>初始化打印机信号量：S.value=2</li><li>P0进程申请打印机，调用wait原语S.value-1=1，随后经过判断S.value&gt;=0所以成功申请打印机并且不进入等待队列</li><li>P1进程申请打印机，调用wait原语S.value-1=0，经过判断S.value&gt;=0，有剩余资源所以成功申请打印机并且不进入等待队列</li><li>P2申请打印机，调用wait原语S.value-1=-1，经过判断S.value&lt;0所以没有剩余资源，利用block原语对P2进程进行阻塞，并将其放入等待队列</li><li>P3申请打印机，调用wait原语S.value-1=-2，经过判断S.value&lt;0所以没有剩余资源，利用block原语对P3进程进行阻塞，并将其放入等待队列</li><li>P0进程使用结束，利用signal原语S.value+1=-1，经过判断S.value&lt;=0，所以等待队列中有进程处于等待状态，调用wakeup原语唤醒一个等待进程</li><li>P2进程被唤醒，开始使用打印机，并且快速使用完毕，调用signal原语S.value+1=0，S.value&lt;=0所以等待队列中还有进程在等待，调用wakeup原语唤醒一个进程</li><li>P3进程被唤醒，开始使用打印机</li><li>P1进程使用完毕，调用signal原语S.value+1=1，此时S.value&gt;0所以等待队列中没有进程，所以不需要执行wakeup原语</li><li>P3进程使用完毕，调用signal原语S.value+1=2，此时S.value&gt;0所以等待队列中没有进程，所以不需要执行wakeup原语</li></ol><p>记录型信号量与整型信号量的主要区别在于其内部存储了等待队列，因此在发现资源被全部分配的情况下，进程不需要始终执行循环，造成“忙等”，而是可以利用block原语进行阻塞，主动放弃处理机，并进入该资源信号量的等待队列中，可见，记录型信号量完成的机制遵循了“让权等待”原则，不会出现“忙等”</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;信号量机制&quot;&gt;&lt;a href=&quot;#信号量机制&quot; class=&quot;headerlink&quot; title=&quot;信号量机制&quot;&gt;&lt;/a&gt;信号量机制&lt;/h1&gt;&lt;p&gt;在我们之前学习的有关进程互斥的硬件软件方法中，都存在着一些不可避免的问题&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;例如在双标志检查</summary>
       
     
     
