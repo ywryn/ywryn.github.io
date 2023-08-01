@@ -1,0 +1,371 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Perrin Numbers | Ywrby Blog</title><meta name="keywords" content="算法"><meta name="author" content="Ywrby"><meta name="copyright" content="Ywrby"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><!-- 谷歌的html标记--><meta name="google-site-verification" content="e05stg5wY6bE2nZ7DYwitbpUAf0hfp7tPDLASJDu8Uo"><!-- 百度的html标记--><meta name="baidu-site-verification" content="codeva-ZVXA4m7EfR"><meta name="description" content="Perrin numbers佩林数（Perrin numbers）是一个整数数列，以P(n)表示，其中 n 为非负整数。佩林数列的定义如下： P(0) &#x3D; 3P(1) &#x3D; 0P(2) &#x3D; 2 对于 n ≥ 3 的情况，佩林数列的每一项都由以下递推公式获得： P(n) &#x3D; P(n-2) + P(n-3)，其中 n ≥ 3 因此，佩林数列开始为：3、0、2、3、2、5、5、7、10、12、17、… 佩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Perrin Numbers">
+<meta property="og:url" content="http://ywrby.com/2023/07/30/Perrin-Numbers/index.html">
+<meta property="og:site_name" content="Ywrby Blog">
+<meta property="og:description" content="Perrin numbers佩林数（Perrin numbers）是一个整数数列，以P(n)表示，其中 n 为非负整数。佩林数列的定义如下： P(0) &#x3D; 3P(1) &#x3D; 0P(2) &#x3D; 2 对于 n ≥ 3 的情况，佩林数列的每一项都由以下递推公式获得： P(n) &#x3D; P(n-2) + P(n-3)，其中 n ≥ 3 因此，佩林数列开始为：3、0、2、3、2、5、5、7、10、12、17、… 佩">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://ywrby.com/img/illust_3518827_20191113_165540.jpg">
+<meta property="article:published_time" content="2023-07-30T03:53:49.000Z">
+<meta property="article:modified_time" content="2023-08-01T12:09:27.416Z">
+<meta property="article:author" content="Ywrby">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ywrby.com/img/illust_3518827_20191113_165540.jpg"><link rel="shortcut icon" href="/img/title.png"><link rel="canonical" href="http://ywrby.com/2023/07/30/Perrin-Numbers/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Perrin Numbers',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-02 00:09:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Ywrby Blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/ywrby.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">140</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">27</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">17</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Bilibili</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 追番列表</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://space.bilibili.com/353923033"><i class="fa-fw fas fa-music"></i><span> B站主页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/illust_3518827_20191113_165540.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Ywrby Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> Bilibili</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 追番列表</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://space.bilibili.com/353923033"><i class="fa-fw fas fa-music"></i><span> B站主页</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Perrin Numbers</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-07-30T03:53:49.000Z" title="Created 2023-07-30 15:53:49">2023-07-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-08-01T12:09:27.416Z" title="Updated 2023-08-02 00:09:27">2023-08-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/UOA/">UOA</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/UOA/COMPSCI-320/">COMPSCI 320</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Perrin Numbers"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Perrin-numbers"><a href="#Perrin-numbers" class="headerlink" title="Perrin numbers"></a>Perrin numbers</h1><p>佩林数（Perrin numbers）是一个整数数列，以P(n)表示，其中 n 为非负整数。佩林数列的定义如下：</p>
+<p>P(0) = 3<br>P(1) = 0<br>P(2) = 2</p>
+<p>对于 n ≥ 3 的情况，佩林数列的每一项都由以下递推公式获得：</p>
+<p>P(n) = P(n-2) + P(n-3)，其中 n ≥ 3</p>
+<p>因此，佩林数列开始为：3、0、2、3、2、5、5、7、10、12、17、…</p>
+<p>佩林数由法国数学家Alfred J. Perrin于1899年引入的，以他的名字命名。这个数列在组合数学和计算机科学中有一些应用。</p>
+<p>佩林数列的前几项为：3、0、2、3、2、5、5、7、10、12、17、…，以此类推。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n    = <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>,  <span class="number">9</span>,  <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span></span><br><span class="line">P(n) = <span class="number">3</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">12</span>, <span class="number">17</span>, <span class="number">22</span>, <span class="number">29</span>, <span class="number">39</span>, <span class="number">51</span></span><br><span class="line">div? = n, n, y, y, n, y, n, y, n,  n,  n,  y,  n,  y,  n</span><br></pre></td></tr></table></figure>
+
+<p>佩林数具有很多特殊的性质，观察上面这三行列表，第一行是数列n，第二行则是按照数列n对应的佩林数数列，第三行是P(n)能否整除n，我们观察发现2, 3, 5, 7, 11, 13对应的佩林数和n数列能够正好整除，而这恰好就是0-14范围内的素数列表</p>
+<p>经过继续计算不能看出， P(n) 可被 n 整除的n值似乎都是素数，因此，我们可以提出猜想：</p>
+<blockquote>
+<p>令 S 为所有数字 n 的集合，使得 P(n) 可被 n 整除。 S 是所有素数的集合吗？</p>
+</blockquote>
+<p>结果表明</p>
+<ul>
+<li>对于所有素数 n，P(n) 都能被 n 整除。</li>
+<li>对于P(n) 可被n 整除的任何数字n，我们将其称为“佩林伪素数”（Perrin pseudo-prime）。</li>
+<li>所有素数都是佩林伪素数，但所有佩林伪素数是否都是素数呢</li>
+</ul>
+<p>为了找到这个猜想的反例，我们想要编写一个程序，输出从 1 到 10 亿的所有 佩林伪素数</p>
+<p>如果直接去计算这个范围内的佩林数，很快就会超过计算机可以计算的证书范围，所以我们要考虑如何简化计算过程。</p>
+<p>在这个计算过程中，我们真正关心的不是佩林数大小，而是佩林数能否被n整除，换言之，我们关心 (P(n) mod n) 是否等于 0。</p>
+<p>因此，我们使用 $P(n,m)$ 来表示 (P(n) mod m) ，我们可以使用以下公式来计算 $P(n, m)$</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">P(<span class="number">0</span>, m) = <span class="number">3</span> mod m</span><br><span class="line">P(<span class="number">1</span>, m) = <span class="number">0</span></span><br><span class="line">P(<span class="number">2</span>, m) = <span class="number">2</span> mod m</span><br><span class="line">P(n, m) = (P(n − <span class="number">2</span>, m) + P(n − <span class="number">3</span>, m)) mod m</span><br></pre></td></tr></table></figure>
+
+<p>现在我们可以只计算 $P(n, n)$ 。请注意，当且仅当 $P(n, n) = 0$ 时，P(n) 才能被 n 整除</p>
+<h1 id="暴力破解（Brute-force）"><a href="#暴力破解（Brute-force）" class="headerlink" title="暴力破解（Brute-force）"></a>暴力破解（Brute-force）</h1><p>第一个想法是采用上面的公式，并直接使用递归算法来实现它们。实现这个方法很简单，用它来检查 n 的小值。 P(n) mod n 的值可以总结在一个表中，该表表明，对于较小的 n 值，没有合数 n 能整除 P(n)。问题是当 n 开始变大时，这个（第一个）程序需要很长时间才能运行。为什么？</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">PerrinNumber&lt;-<span class="keyword">function</span>(n)&#123;</span><br><span class="line">  p0=<span class="number">3</span></span><br><span class="line">  p1=<span class="number">0</span></span><br><span class="line">  p2=<span class="number">2</span></span><br><span class="line">  <span class="keyword">if</span>(n==<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="built_in">return</span>(p0)</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span> (n==<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="built_in">return</span>(p1)</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n==<span class="number">2</span>)&#123;</span><br><span class="line">    <span class="built_in">return</span>(p2)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">return</span>(PerrinNumber(n-<span class="number">2</span>)+PerrinNumber(n-<span class="number">3</span>))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">BruteForce&lt;-<span class="keyword">function</span>(n)&#123;</span><br><span class="line">  <span class="keyword">if</span>(n==<span class="number">0</span>||n==<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="built_in">return</span>(<span class="literal">FALSE</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">return</span>(PerrinNumber(n)%%n ==<span class="number">0</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="built_in">c</span>(<span class="number">0</span>:<span class="number">14</span>))&#123;</span><br><span class="line">  print(paste(<span class="string">&quot;n=&quot;</span>,<span class="built_in">as.character</span>(i),<span class="string">&quot; p(n)=&quot;</span>,<span class="built_in">as.character</span>(PerrinNumber(i)),<span class="string">&quot; res=&quot;</span>,BruteForce(i)))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">execution_time &lt;- system.time(BruteForce(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">&gt; system.time(BruteForce(<span class="number">10</span>))</span><br><span class="line">用户 系统 流逝 </span><br><span class="line">   <span class="number">0</span>    <span class="number">0</span>    <span class="number">0</span> </span><br><span class="line">&gt; <span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">&gt; system.time(BruteForce(<span class="number">20</span>))</span><br><span class="line">用户 系统 流逝 </span><br><span class="line">   <span class="number">0</span>    <span class="number">0</span>    <span class="number">0</span> </span><br><span class="line">&gt; <span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">&gt; system.time(BruteForce(<span class="number">30</span>))</span><br><span class="line">用户 系统 流逝 </span><br><span class="line"><span class="number">0.02</span> <span class="number">0.00</span> <span class="number">0.02</span> </span><br><span class="line">&gt; <span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">&gt; system.time(BruteForce(<span class="number">40</span>))</span><br><span class="line">用户 系统 流逝 </span><br><span class="line"><span class="number">0.07</span> <span class="number">0.00</span> <span class="number">0.06</span> </span><br><span class="line">&gt; <span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">&gt; system.time(BruteForce(<span class="number">50</span>))</span><br><span class="line">用户 系统 流逝 </span><br><span class="line"><span class="number">1.06</span> <span class="number">0.00</span> <span class="number">1.06</span> </span><br><span class="line">&gt; <span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">&gt; system.time(BruteForce(<span class="number">55</span>))</span><br><span class="line">用户 系统 流逝 </span><br><span class="line"><span class="number">4.51</span> <span class="number">0.00</span> <span class="number">4.51</span> </span><br><span class="line">&gt; <span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">&gt; system.time(BruteForce(<span class="number">60</span>))</span><br><span class="line"> 用户  系统  流逝 </span><br><span class="line"><span class="number">17.96</span>  <span class="number">0.00</span> <span class="number">17.97</span></span><br></pre></td></tr></table></figure>
+
+<p>上文是通过R语言实现的暴力破解佩林数方法，可以看到算法的时间成本增长非常快，我们想通过这种算法计算较大的佩林数是不现实的。实际上，我们可以验证暴力破解方法的运行时间是以指数形式增长的（通过归纳假设法）</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前三项由于都是固定值，只需要常数时间就可以返回结果</span></span><br><span class="line"><span class="built_in">T</span> (k) = <span class="number">1</span>, <span class="keyword">for</span> k &lt; <span class="number">3</span></span><br><span class="line"><span class="comment"># n项需要递归调用前n-2和n-3项</span></span><br><span class="line"><span class="built_in">T</span> (n) = <span class="built_in">T</span> (n − <span class="number">2</span>) + <span class="built_in">T</span> (n − <span class="number">3</span>) + <span class="built_in">c</span>, <span class="keyword">for</span> n &gt; <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20230801230310.jpg"></p>
+<h1 id="动态规划（Dynamic-Programming）"><a href="#动态规划（Dynamic-Programming）" class="headerlink" title="动态规划（Dynamic Programming）"></a>动态规划（Dynamic Programming）</h1><p>为什么暴力破解最后的执行速度这么慢？在了解其运算过程后我们意识到该算法一遍又一遍地重复其工作。特别是，为了计算 P(n)，算法递归计算 P(n − 2) 和 P(n − 3)，这两个递归调用进一步递归调用来计算 P(n − 4)、P(n − 5) 、P(n − 5) 和 P(n − 6)。不难发现P(n − 5) 计算了两次。对于这个特定问题，我们唯一需要知道值 P(k) 的时候是在计算 P(k + 2) 和 P(k + 3) 时。因此，如果我们按升序计算值，记住序列中的最后 3 个值，我们可以轻松计算佩林数</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">PerrinNumber&lt;-<span class="keyword">function</span>(n)&#123;</span><br><span class="line">  p0=<span class="number">3</span></span><br><span class="line">  p1=<span class="number">0</span></span><br><span class="line">  p2=<span class="number">2</span></span><br><span class="line">  res=<span class="number">0</span></span><br><span class="line">  <span class="keyword">if</span>(n==<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="built_in">return</span>(p0)</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span> (n==<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="built_in">return</span>(p1)</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n==<span class="number">2</span>)&#123;</span><br><span class="line">    <span class="built_in">return</span>(p2)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    top=<span class="built_in">c</span>(<span class="number">3</span>,<span class="number">0</span>,<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">for</span>(i <span class="keyword">in</span> <span class="built_in">c</span>(<span class="number">3</span>:n))&#123;</span><br><span class="line">      res=top[<span class="number">2</span>]+top[<span class="number">1</span>]</span><br><span class="line">      top=<span class="built_in">c</span>(top[<span class="number">2</span>],top[<span class="number">3</span>],res)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span>(res)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">DynamicProgramming&lt;-<span class="keyword">function</span>(n)&#123;</span><br><span class="line">  <span class="keyword">if</span>(n==<span class="number">0</span>||n==<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="built_in">return</span>(<span class="literal">FALSE</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">return</span>(PerrinNumber(n)%%n ==<span class="number">0</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="built_in">c</span>(<span class="number">0</span>:<span class="number">14</span>))&#123;</span><br><span class="line">  print(paste(<span class="string">&quot;n=&quot;</span>,<span class="built_in">as.character</span>(i),<span class="string">&quot; p(n)=&quot;</span>,<span class="built_in">as.character</span>(PerrinNumber(i)),<span class="string">&quot; res=&quot;</span>,DynamicProgramming(i)))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">system.time(BruteForce(<span class="number">1000000</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">&gt; system.time(BruteForce(<span class="number">10000</span>))</span><br><span class="line">用户 系统 流逝 </span><br><span class="line">   <span class="number">0</span>    <span class="number">0</span>    <span class="number">0</span> </span><br><span class="line">&gt; <span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">&gt; system.time(BruteForce(<span class="number">100000</span>))</span><br><span class="line">用户 系统 流逝 </span><br><span class="line"><span class="number">0.05</span> <span class="number">0.00</span> <span class="number">0.04</span> </span><br><span class="line">&gt; <span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">&gt; system.time(BruteForce(<span class="number">1000000</span>))</span><br><span class="line">用户 系统 流逝 </span><br><span class="line"><span class="number">0.51</span> <span class="number">0.00</span> <span class="number">0.51</span> </span><br></pre></td></tr></table></figure>
+
+<p>可以看到算法的运行时间降低的非常快，算法已经从指数级降低为了线性时间算法！</p>
+<h1 id="快速求幂算法（Fast-Exponentiation-Algorithm）"><a href="#快速求幂算法（Fast-Exponentiation-Algorithm）" class="headerlink" title="快速求幂算法（Fast Exponentiation Algorithm）"></a>快速求幂算法（Fast Exponentiation Algorithm）</h1><p>线性时间复杂度是否就是目前的极限呢，看起来要计算第n项我们必须要知道第n-2项，以此类推还需要知道第n-4项等等，线性时间看起来已经是最优的了，但实际上我们可以在O(logn)时间内实现计算过程，这需要采用分而治之的思想</p>
+<p>回想如何将矩阵乘以向量，我们看到对于任何值 n ≥ 3，我们可以写出以下线性代数方程，它表示最后一个算法的一次迭代</p>
+<p>$$<br>\begin{pmatrix}<br>0 &amp; 1 &amp; 1 \<br>1 &amp; 0 &amp; 0 \<br>0 &amp; 1 &amp; 0 \<br>\end{pmatrix}<br>*<br>\begin{pmatrix}<br>P(n-1) \<br>P(n-2) \<br>P(n-3) \<br>\end{pmatrix}<br>=<br>\begin{pmatrix}<br>P(n) \<br>P(n-1) \<br>P(n-2) \<br>\end{pmatrix}<br>$$</p>
+<p>回想一下，对于 n ≥ 3，我们定义 P(n) = P(n − 2) + P(n − 3)</p>
+<p>整个表达式可以乘以同一个矩阵，以获得包含 P(n + 1)、P(n) 和 P(n − 1) 的向量。扩展这个论点，如果 M 代表上面表达式中的矩阵，V 代表初始值的向量： (2, 0, 3)T ，那么我们将矩阵 M 的 (n − 2) 次方与初始值相乘得到：</p>
+<p>$$<br>M^{n-2}*V=<br>\begin{pmatrix}<br>P(n) \<br>P(n-1) \<br>P(n-2) \<br>\end{pmatrix}<br>$$</p>
+<p>所以现在，为了计算第 n 个 Perrin 数，我们只需要将 3 × 3 矩阵求幂</p>
+<p>而在求幂的计算过程中，我们也可以进行简化，例如我们要求偶数次幂$M^{16}$，其本质上就是求$(((M^2)^2)^2)^2$，这样我们就把需要进行n次的计算过程简化为了logn，对于奇数次幂，其处理也非常简单，我们只需要利用递归的方式对其进行归纳</p>
+<p><img src="https://ywrbyimg.oss-cn-chengdu.aliyuncs.com/img/QQ%E6%88%AA%E5%9B%BE20230801234145.jpg"></p>
+<p>很容易证明 FastExp(a,n) 最多执行 $2\log_2 n$ 次递归调用。假设指数整数 n ≥ 0。因此需要 O(log n) 次乘法来计算</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">FastExp&lt;-<span class="keyword">function</span>(a,n)&#123;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">0</span>)&#123;<span class="built_in">return</span>(<span class="number">1</span>)&#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (n == <span class="number">1</span>)&#123;<span class="built_in">return</span>(a)&#125;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (n %% <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">    t &lt;- FastExp(a,n/<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">return</span>(t %*% t)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">return</span>(a %*% FastExp(a,(n - <span class="number">1</span>)))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">n=<span class="number">14</span></span><br><span class="line">(FastExp(a,n-<span class="number">2</span>) %*% v)[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PerrinNumber&lt;-<span class="keyword">function</span>(n)&#123;</span><br><span class="line">  p0=<span class="number">3</span></span><br><span class="line">  p1=<span class="number">0</span></span><br><span class="line">  p2=<span class="number">2</span></span><br><span class="line">  res=<span class="number">0</span></span><br><span class="line">  a &lt;- matrix(<span class="built_in">c</span>(<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>), nrow = <span class="number">3</span>, ncol = <span class="number">3</span>)</span><br><span class="line">  v= matrix(<span class="built_in">c</span>(<span class="number">2</span>,<span class="number">0</span>,<span class="number">3</span>), nrow = <span class="number">3</span>, ncol = <span class="number">1</span>)</span><br><span class="line">  <span class="keyword">if</span>(n==<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="built_in">return</span>(p0)</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span> (n==<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="built_in">return</span>(p1)</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n==<span class="number">2</span>)&#123;</span><br><span class="line">    <span class="built_in">return</span>(p2)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">return</span>((FastExp(a,n-<span class="number">2</span>) %*% v)[<span class="number">1</span>])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ThirdTry&lt;-<span class="keyword">function</span>(n)&#123;</span><br><span class="line">  <span class="keyword">if</span>(n==<span class="number">0</span>||n==<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="built_in">return</span>(<span class="literal">FALSE</span>)</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">return</span>(PerrinNumber(n)%%n ==<span class="number">0</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="built_in">c</span>(<span class="number">0</span>:<span class="number">14</span>))&#123;</span><br><span class="line">  print(paste(<span class="string">&quot;n=&quot;</span>,<span class="built_in">as.character</span>(i),<span class="string">&quot; p(n)=&quot;</span>,<span class="built_in">as.character</span>(PerrinNumber(i)),<span class="string">&quot; res=&quot;</span>,ThirdTry(i)))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">system.time(ThirdTry(<span class="number">100000000000000000000</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">&gt; system.time(ThirdTry(<span class="number">1000000000000000000</span>))</span><br><span class="line">用户 系统 流逝 </span><br><span class="line">   <span class="number">0</span>    <span class="number">0</span>    <span class="number">0</span> </span><br><span class="line">&gt; <span class="comment"># 使用system.time()函数计算函数执行时间</span></span><br><span class="line">&gt; system.time(ThirdTry(<span class="number">100000000000000000000</span>))</span><br><span class="line">用户 系统 流逝 </span><br><span class="line">   <span class="number">0</span>    <span class="number">0</span>    <span class="number">0</span> </span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Ywrby</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://ywrby.com/2023/07/30/Perrin-Numbers/">http://ywrby.com/2023/07/30/Perrin-Numbers/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a></div><div class="post_share"><div class="social-share" data-image="/img/illust_3518827_20191113_165540.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/07/29/Access-Control/"><img class="next-cover" src="/img/80857290_p0.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Access Control</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2021/11/07/1-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-%E7%AE%97%E6%B3%95%E5%A4%8D%E4%B9%A0/" title="1-归并排序-算法复习"><img class="cover" src="/img/80857290_p0.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-07</div><div class="title">1-归并排序-算法复习</div></div></a></div><div><a href="/2023/07/21/%E7%A8%B3%E5%AE%9A%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98/" title="稳定匹配问题"><img class="cover" src="/img/73604608_p0.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-21</div><div class="title">稳定匹配问题</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/ywrby.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ywrby</div><div class="author-info__description">天将降大任于枫叶使🍁枫门永存🛐</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">140</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">27</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">17</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ywrby"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:ywrby@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/353923033" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2278431384&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://www.facebook.com/profile.php?id=100033741068822" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Perrin-numbers"><span class="toc-number">1.</span> <span class="toc-text">Perrin numbers</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9A%B4%E5%8A%9B%E7%A0%B4%E8%A7%A3%EF%BC%88Brute-force%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">暴力破解（Brute-force）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%EF%BC%88Dynamic-Programming%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">动态规划（Dynamic Programming）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%B1%82%E5%B9%82%E7%AE%97%E6%B3%95%EF%BC%88Fast-Exponentiation-Algorithm%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">快速求幂算法（Fast Exponentiation Algorithm）</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/30/Perrin-Numbers/" title="Perrin Numbers"><img src="/img/illust_3518827_20191113_165540.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Perrin Numbers"/></a><div class="content"><a class="title" href="/2023/07/30/Perrin-Numbers/" title="Perrin Numbers">Perrin Numbers</a><time datetime="2023-07-30T03:53:49.000Z" title="Created 2023-07-30 15:53:49">2023-07-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/29/Access-Control/" title="Access Control"><img src="/img/80857290_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Access Control"/></a><div class="content"><a class="title" href="/2023/07/29/Access-Control/" title="Access Control">Access Control</a><time datetime="2023-07-29T08:44:56.000Z" title="Created 2023-07-29 20:44:56">2023-07-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/25/Password/" title="Password"><img src="/img/81934649_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Password"/></a><div class="content"><a class="title" href="/2023/07/25/Password/" title="Password">Password</a><time datetime="2023-07-25T05:02:00.000Z" title="Created 2023-07-25 17:02:00">2023-07-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/22/GDPR/" title="GDPR"><img src="/img/67888138_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GDPR"/></a><div class="content"><a class="title" href="/2023/07/22/GDPR/" title="GDPR">GDPR</a><time datetime="2023-07-22T06:02:06.000Z" title="Created 2023-07-22 18:02:06">2023-07-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/21/%E7%A8%B3%E5%AE%9A%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98/" title="稳定匹配问题"><img src="/img/73604608_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="稳定匹配问题"/></a><div class="content"><a class="title" href="/2023/07/21/%E7%A8%B3%E5%AE%9A%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98/" title="稳定匹配问题">稳定匹配问题</a><time datetime="2023-07-20T17:25:28.000Z" title="Created 2023-07-21 05:25:28">2023-07-21</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/illust_3518827_20191113_165540.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Ywrby</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'QkExI1n70lz2qs7pVpmFeKqp-gzGzoHsz',
+      appKey: 'WhG61iDj96bflhu6CIpmE9V8',
+      placeholder: 'Please leave your footprints',
+      avatar: 'mp',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="5402995011" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-lrctype=0	data-order="random" data-preload="none" data-autoplay="true" muted></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
